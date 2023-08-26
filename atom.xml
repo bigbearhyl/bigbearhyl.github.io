@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Fomalhaut🥝</title>
+  <title>LのBlog</title>
   
   
   <link href="https://www.bigbearhyl.github.io/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>https://www.bigbearhyl.github.io/</id>
   
   <author>
-    <name>Fomalhaut🥝</name>
+    <name>L</name>
     
   </author>
   
