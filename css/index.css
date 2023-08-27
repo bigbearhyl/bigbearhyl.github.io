@@ -7505,7 +7505,8 @@ button#go-up:hover #percent {
 }
 
 /* 侧边栏个人信息卡片动态渐变色 */
-/* #aside-content > .card-widget.card-info {
+/* 日历渐变*/
+#aside-content > .card-widget.card-calendar {
   background: linear-gradient(
     -45deg,
     #e8d8b9,
@@ -7553,7 +7554,18 @@ button#go-up:hover #percent {
   100% {
     background-position: 0% 50%;
   }
-} */
+} 
+
+
+
+
+
+
+
+
+
+
+
 
 /* 个人信息卡片背景图 */
 [data-theme="light"] #aside-content > .card-widget.card-info {
