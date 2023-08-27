@@ -6597,7 +6597,7 @@ center#name-container {
 div#post,
 div#page,
 div#archive {
-  background: var(--trans-light);
+  background: rgba(255, 255, 255, 1);
   backdrop-filter: var(--backdrop-filter);
   border: var(--border-style);
   border-radius: 20px;
