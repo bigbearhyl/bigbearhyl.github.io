@@ -9371,6 +9371,14 @@ hr:before {
   transition: all 0.3s ease-in-out;
 }
 
+.weibo-rank {
+  color: #000; /* 设置为黑色，你可以根据需要调整颜色值 */
+}
+
+.weibo-num{
+  color: #ff9999;
+}
+
 .search-dialog {
   position: fixed;
   top: 10%;
