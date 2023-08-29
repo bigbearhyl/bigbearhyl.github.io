@@ -83,15 +83,6 @@
   </url>
   
   <url>
-    <loc>https://bigbearhyl.github.io/tags/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://bigbearhyl.github.io/box/animation/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
@@ -101,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://bigbearhyl.github.io/box/nav/index.html</loc>
+    <loc>https://bigbearhyl.github.io/tags/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -119,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://bigbearhyl.github.io/personal/about/index.html</loc>
+    <loc>https://bigbearhyl.github.io/box/nav/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -146,25 +137,7 @@
   </url>
   
   <url>
-    <loc>https://bigbearhyl.github.io/life/games/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://bigbearhyl.github.io/life/music/index.html</loc>
-    
-    <lastmod>2023-03-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://bigbearhyl.github.io/site/census/index.html</loc>
+    <loc>https://bigbearhyl.github.io/personal/about/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -182,7 +155,25 @@
   </url>
   
   <url>
-    <loc>https://bigbearhyl.github.io/social/fcircle/index.html</loc>
+    <loc>https://bigbearhyl.github.io/life/music/index.html</loc>
+    
+    <lastmod>2023-03-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bigbearhyl.github.io/life/games/index.html</loc>
+    
+    <lastmod>2023-03-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bigbearhyl.github.io/site/census/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -192,6 +183,15 @@
   
   <url>
     <loc>https://bigbearhyl.github.io/social/link/index.html</loc>
+    
+    <lastmod>2023-03-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bigbearhyl.github.io/social/fcircle/index.html</loc>
     
     <lastmod>2023-03-22</lastmod>
     
@@ -241,6 +241,13 @@
   </url>
   
   <url>
+    <loc>https://bigbearhyl.github.io/tags/hexo/</loc>
+    <lastmod>2023-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://bigbearhyl.github.io/tags/makedown/</loc>
     <lastmod>2023-08-29</lastmod>
     <changefreq>weekly</changefreq>
@@ -248,7 +255,7 @@
   </url>
   
   <url>
-    <loc>https://bigbearhyl.github.io/tags/hexo/</loc>
+    <loc>https://bigbearhyl.github.io/tags/%E9%93%BE%E6%8E%A5/</loc>
     <lastmod>2023-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -275,24 +282,10 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://bigbearhyl.github.io/tags/%E9%93%BE%E6%8E%A5/</loc>
-    <lastmod>2023-08-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
     <loc>https://bigbearhyl.github.io/categories/%E6%BC%94%E7%A4%BA/</loc>
-    <lastmod>2023-08-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://bigbearhyl.github.io/categories/makedown/</loc>
     <lastmod>2023-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -306,7 +299,7 @@
   </url>
   
   <url>
-    <loc>https://bigbearhyl.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <loc>https://bigbearhyl.github.io/categories/makedown/</loc>
     <lastmod>2023-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -314,6 +307,13 @@
   
   <url>
     <loc>https://bigbearhyl.github.io/categories/%E4%B8%AA%E4%BA%BA%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%80%E4%BA%9B%E7%BD%91%E7%BB%9C%E8%BF%9E%E6%8E%A5/</loc>
+    <lastmod>2023-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://bigbearhyl.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
     <lastmod>2023-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
