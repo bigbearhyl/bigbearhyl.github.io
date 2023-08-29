@@ -348,13 +348,13 @@ document.addEventListener("copy", function () {
     new Vue({
       data: function () {
         this.$notify({
-          title: "哎嘿！复制成功🍬",
+          title: "哎嘿！复制成功",
           message: "若要转载最好保留原文链接哦，给你一个大大的赞！",
           position: 'top-left',
           offset: 50,
           showClose: true,
           type: "success",
-          duration: 5000
+          duration: 1000
         });
       }
     })
@@ -363,25 +363,7 @@ document.addEventListener("copy", function () {
 
 
 // f12提醒但不禁用
-document.onkeydown = function (e) {
-  if (123 == e.keyCode || (e.ctrlKey && e.shiftKey && (74 === e.keyCode || 73 === e.keyCode || 67 === e.keyCode)) || (e.ctrlKey && 85 === e.keyCode)) {
-    debounce(function () {
-      new Vue({
-        data: function () {
-          this.$notify({
-            title: "你已被发现😜",
-            message: "小伙子，扒源记住要遵循GPL协议！",
-            position: 'top-left',
-            offset: 50,
-            showClose: true,
-            type: "warning",
-            duration: 5000
-          });
-        }
-      })
-    }, 300);
-  }
-};
+
 /* 禁用f12与按键防抖 end */
 
 //----------------------------------------------------------------
@@ -658,132 +640,7 @@ if (document.body.clientWidth > 992) {
       S_V: S_V
     }
   };
-  function show(basicInfo) {
-    if (basicInfo.ScrollTop > 0.001) {
-      $(".neko").css('display', 'block');
-    } else {
-      $(".neko").css('display', 'none');
-    }
-  }
-  (function ($) {
-    $.fn.nekoScroll = function (option) {
-      var defaultSetting = {
-        top: '0',
-        scroWidth: 6 + 'px',
-        z_index: 9999,
-        zoom: 0.9,
-        borderRadius: 5 + 'px',
-        right: 55.6 + 'px',
-        nekoImg: "https://bu.dusays.com/2022/07/20/62d812db74be9.png",
-        hoverMsg: "春天啦~",
-        color: "var(--theme-color)",
-        during: 500,
-        blog_body: "body",
-      };
-      var setting = $.extend(defaultSetting, option);
-      var getThis = this.prop("className") !== "" ? "." + this.prop("className") : this.prop("id") !== "" ? "#" +
-        this.prop("id") : this.prop("nodeName");
-      if ($(".neko").length == 0) {
-        this.after("<div class=\"neko\" id=" + setting.nekoname + " data-msg=\"" + setting.hoverMsg + "\"></div>");
-      }
-      let basicInfo = getBasicInfo();
-      $(getThis)
-        .css({
-          'position': 'fixed',
-          'width': setting.scroWidth,
-          'top': setting.top,
-          'height': basicInfo.Band_H * setting.zoom * basicInfo.ViewH * 0.01 + 'px',
-          'z-index': setting.z_index,
-          'background-color': setting.bgcolor,
-          "border-radius": setting.borderRadius,
-          'right': setting.right,
-          'background-image': 'url(' + setting.scImg + ')',
-          'background-image': '-webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent)', 'border-radius': '2em',
-          'background-size': 'contain'
-        });
-      $("#" + setting.nekoname)
-        .css({
-          'position': 'fixed',
-          'top': basicInfo.Band_H * setting.zoom * basicInfo.ViewH * 0.01 - 50 + 'px',
-          'z-index': setting.z_index * 10,
-          'right': setting.right,
-          'background-image': 'url(' + setting.nekoImg + ')',
-        });
-      show(getBasicInfo());
-      $(window)
-        .scroll(function () {
-          let basicInfo = getBasicInfo();
-          show(basicInfo);
-          $(getThis)
-            .css({
-              'position': 'fixed',
-              'width': setting.scroWidth,
-              'top': setting.top,
-              'height': basicInfo.Band_H * setting.zoom * basicInfo.ViewH * 0.01 + 'px',
-              'z-index': setting.z_index,
-              'background-color': setting.bgcolor,
-              "border-radius": setting.borderRadius,
-              'right': setting.right,
-              'background-image': 'url(' + setting.scImg + ')',
-              'background-image': '-webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent)', 'border-radius': '2em',
-              'background-size': 'contain'
-            });
-          $("#" + setting.nekoname)
-            .css({
-              'position': 'fixed',
-              'top': basicInfo.Band_H * setting.zoom * basicInfo.ViewH * 0.01 - 50 + 'px',
-              'z-index': setting.z_index * 10,
-              'right': setting.right,
-              'background-image': 'url(' + setting.nekoImg + ')',
-            });
-          if (basicInfo.ScrollTop == basicInfo.S_V) {
-            $("#" + setting.nekoname)
-              .addClass("showMsg")
-          } else {
-            $("#" + setting.nekoname)
-              .removeClass("showMsg");
-            $("#" + setting.nekoname)
-              .attr("data-msg", setting.hoverMsg);
-          }
-        });
-      this.click(function (e) {
-        btf.scrollToDest(0, 500)
-      });
-      $("#" + setting.nekoname)
-        .click(function () {
-          btf.scrollToDest(0, 500)
-        });
-      return this;
-    }
-  })(jQuery);
-
-  $(document).ready(function () {
-    //部分自定义
-    $("#myscoll").nekoScroll({
-      bgcolor: 'rgb(0 0 0 / .5)', //背景颜色，没有绳子背景图片时有效
-      borderRadius: '2em',
-      zoom: 0.9
-    }
-    );
-    //自定义（去掉以下注释，并注释掉其他的查看效果）
-    /*
-    $("#myscoll").nekoScroll({
-        nekoname:'neko1', //nekoname，相当于id
-        nekoImg:'img/猫咪.png', //neko的背景图片
-        scImg:"img/绳1.png", //绳子的背景图片
-        bgcolor:'#1e90ff', //背景颜色，没有绳子背景图片时有效
-        zoom:0.9, //绳子长度的缩放值
-        hoverMsg:'你好~喵', //鼠标浮动到neko上方的对话框信息
-        right:'100px', //距离页面右边的距离
-        fontFamily:'楷体', //对话框字体
-        fontSize:'14px', //对话框字体的大小
-        color:'#1e90ff', //对话框字体颜色
-        scroWidth:'8px', //绳子的宽度
-        z_index:100, //不用解释了吧
-        during:1200, //从顶部到底部滑动的时长
-    });
-    */
-  })
+  
 }
 
 /* 小猫咪 end */
@@ -1110,17 +967,17 @@ function changeMouseMode() {
 //----------------------------------------------------------------
 
 /* 控制台输出字符画 start */
-var now1 = new Date();
+/*var now1 = new Date();
 
 function createtime1() {
-  var grt = new Date("08/09/2022 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  var grt = new Date("08/05/2023 00:00:00"); //此处修改你的建站时间或者网站上线时间
   now1.setTime(now1.getTime() + 250);
   var days = (now1 - grt) / 1000 / 60 / 60 / 24;
   var dnum = Math.floor(days);
 
   var ascll = [
-    `欢迎来到Fomalhaut🥝の小家!`,
-    `Future is now 🍭🍭🍭`,
+    `欢迎来到Lの小家!`,
+    
     `
         
 ███████  ██████  ███    ███  █████  ██      ██   ██  █████  ██    ██ ████████ 
@@ -1184,11 +1041,11 @@ function createtime2() {
   );
 }
 createtime2();
-
+*/
 // 重写console方法
-console.log = function () { };
-console.error = function () { };
-console.warn = function () { };
+//console.log = function () { };
+//console.error = function () { };
+//console.warn = function () { };
 
 /* 控制台输出字符画 end */
 
@@ -1222,21 +1079,7 @@ function switchNightMode() {
     // GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)
     document.getElementById('modeicon').setAttribute('xlink:href', '#icon-sun')
     // 延时弹窗提醒
-    setTimeout(() => {
-      new Vue({
-        data: function () {
-          this.$notify({
-            title: "关灯啦🌙",
-            message: "当前已成功切换至夜间模式！",
-            position: 'top-left',
-            offset: 50,
-            showClose: true,
-            type: "success",
-            duration: 5000
-          });
-        }
-      })
-    }, 2000)
+   
   } else {
     // 先设置太阳月亮透明度
     document.getElementById("sun").style.opacity = "0";
@@ -1249,21 +1092,7 @@ function switchNightMode() {
     activateLightMode()
     saveToLocal.set('theme', 'light', 2)
     document.querySelector('body').classList.add('DarkMode'), document.getElementById('modeicon').setAttribute('xlink:href', '#icon-moon')
-    setTimeout(() => {
-      new Vue({
-        data: function () {
-          this.$notify({
-            title: "开灯啦🌞",
-            message: "当前已成功切换至白天模式！",
-            position: 'top-left',
-            offset: 50,
-            showClose: true,
-            type: "success",
-            duration: 5000
-          });
-        }
-      })
-    }, 2000)
+   
   }
   // handle some cases
   typeof utterancesTheme === 'function' && utterancesTheme()
@@ -1282,18 +1111,18 @@ function share_() {
   try {
     // 截取标题
     var title = document.title;
-    var subTitle = title.endsWith("| Fomalhaut🥝") ? title.substring(0, title.length - 14) : title;
-    navigator.clipboard.writeText('Fomalhaut🥝的站内分享\n标题：' + subTitle + '\n链接：' + url + '\n欢迎来访！🍭🍭🍭');
+    var subTitle = title.endsWith("| L") ? title.substring(0, title.length - 14) : title;
+    navigator.clipboard.writeText('L的站内分享\n标题：' + subTitle + '\n链接：' + url + '\n欢迎来访！');
     new Vue({
       data: function () {
         this.$notify({
-          title: "成功复制分享信息🎉",
+          title: "成功复制分享信息!",
           message: "您现在可以通过粘贴直接跟小伙伴分享了！",
           position: 'top-left',
           offset: 50,
           showClose: true,
           type: "success",
-          duration: 5000
+          duration: 1000
         });
         // return { visible: false }
       }
@@ -1316,7 +1145,7 @@ function share() {
 
 /* 恶搞标题 start */
 //动态标题
-var OriginTitile = document.title;
+/*var OriginTitile = document.title;
 var titleTime;
 document.addEventListener('visibilitychange', function () {
   if (document.hidden) {
@@ -1331,7 +1160,7 @@ document.addEventListener('visibilitychange', function () {
       document.title = OriginTitile;
     }, 2000);
   }
-});
+});*/
 /* 恶搞标题 end */
 
 //----------------------------------------------------------------
@@ -2781,15 +2610,16 @@ class Cursor {
 //----------------------------------------------------------------
 
 /* 页脚计时器 start */
+
 var now = new Date();
 function createtime() {
   // 当前时间
   now.setTime(now.getTime() + 1000);
-  var start = new Date("08/01/2022 00:00:00"); // 旅行者1号开始计算的时间
+  var start = new Date("08/25/2023 00:00:00"); // 旅行者1号开始计算的时间
   var dis = Math.trunc(23400000000 + ((now - start) / 1000) * 17); // 距离=秒数*速度 记住转换毫秒
   var unit = (dis / 149600000).toFixed(6);  // 天文单位
   // 网站诞生时间
-  var grt = new Date("08/09/2022 00:00:00");
+  var grt = new Date("08/25/2023 00:00:00");
   var days = (now - grt) / 1e3 / 60 / 60 / 24,
     dnum = Math.floor(days),
     hours = (now - grt) / 1e3 / 60 / 60 - 24 * dnum,
@@ -2804,10 +2634,22 @@ function createtime() {
   let currentTimeHtml = "";
   (currentTimeHtml =
     hnum < 18 && hnum >= 9
-      ? `<img class='boardsign' src='https://lskypro.acozycotage.net/Fomalhaut/badge/F小屋-科研摸鱼中.svg' title='什么时候能够实现财富自由呀~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`
-      : `<img class='boardsign' src='https://lskypro.acozycotage.net/Fomalhaut/badge/F小屋-下班休息啦.svg' title='下班了就该开开心心地玩耍~'><br> <div style="font-size:13px;font-weight:bold">本站居然运行了 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒 <i id="heartbeat" class='fas fa-heartbeat'></i> <br> 旅行者 1 号当前距离地球 ${dis} 千米，约为 ${unit} 个天文单位 🚀</div>`),
-    document.getElementById("workboard") &&
-    (document.getElementById("workboard").innerHTML = currentTimeHtml);
+      ? ` <div style="font-size:15px;font-weight:bold">本站居然运行了 
+      <span style="color: purple;">${dnum}</span> 天
+      <span style="color: lightcoral;">${hnum}</span> 小时
+      <span style="color: orange;">${mnum}</span> 分
+      <span style="color: limegreen;">${snum}</span> 秒
+       
+      <i id="heartbeat" class='fas fa-heart'></i> </div>
+      `
+      : `<div style="font-size:15px;font-weight:bold">本站居然运行了 
+      <span style="color: purple;">${dnum}</span> 天
+      <span style="color: lightcoral;">${hnum}</span> 小时
+      <span style="color: orange;">${mnum}</span> 分
+      <span style="color: limegreen;">${snum}</span> 秒 
+      <i id="heartbeat" class='fas fa-heart'></i> </div>
+      `),
+    document.getElementById("workboard").innerHTML = currentTimeHtml ;
 }
 // 设置重复执行函数，周期1000ms
 setInterval(() => {

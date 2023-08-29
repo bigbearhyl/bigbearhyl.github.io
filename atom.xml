@@ -6,7 +6,7 @@
   <link href="https://bigbearhyl.github.io/atom.xml" rel="self"/>
   
   <link href="https://bigbearhyl.github.io/"/>
-  <updated>2023-08-26T12:46:28.922Z</updated>
+  <updated>2023-08-28T13:31:14.357Z</updated>
   <id>https://bigbearhyl.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://bigbearhyl.github.io/posts/4a17b156.html"/>
     <id>https://bigbearhyl.github.io/posts/4a17b156.html</id>
     <published>2023-08-26T12:46:27.709Z</published>
-    <updated>2023-08-26T12:46:28.922Z</updated>
+    <updated>2023-08-28T13:31:14.357Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start">Quick Start</h2><h3 id="Create-a-new-post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
@@ -144,9 +144,9 @@
     <link href="https://bigbearhyl.github.io/posts/1e7ff688.html"/>
     <id>https://bigbearhyl.github.io/posts/1e7ff688.html</id>
     <published>2023-08-22T18:23:19.000Z</published>
-    <updated>2023-08-26T12:46:28.918Z</updated>
+    <updated>2023-08-28T10:59:17.801Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://image-f2k.pages.dev/file/25d2cf009b5f08d6285cc.png" alt=""></p><p>该论文是一篇关于在大数据背景下实践用户画像统计方法的研究。</p><span id="more"></span><p>由于移动互联网的快速发展，人们使用智能手机的时间和频率不断增加，用户数据和行为数据呈指数级增长，这些数据有基本的大量性、实时性、准确性、空间性和动态性。作者通过收集2014年第四季度智能手机应用程序的使用行为数据，让用户成为研究对象，分析和实践用户画像、用户流失模型预测和用户行为聚类等问题。该论文总结和概述了用户画像的定义、建立用户标签系统的基本过程和统计分析方法，并提出了三个研究用户画像的基本要素。文章提出了新的用户流失场景定义，并建立了预测用户流失行为的模型。该论文还介绍了在市场营销中运用FRM指标分析用户行为的方法，并结合聚类分析的统计方法更好地解释和描述用户行为特征。</p><p>本研究探讨了在大数据背景下实践用户画像统计方法的重要性和方法，针对移动互联网的快速发展和爆炸性增长，作者通过分析和实践用户画像、用户流失模型预测和用户行为聚类等问题，提出了一种有效的解决方案。全文总结和概述了用户画像的定义、建立用户标签系统的基本过程和统计分析方法，并提出了三个研究用户画像的基本要素。文章还提出了新的用户流失场景定义，并建立了预测用户流失行为的模型。此外，研究中介绍了在市场营销中运用FRM指标分析用户行为的方法，并结合聚类分析的统计方法更好地解释和描述用户行为特征。</p><p>这是一个行内数学公式：$\begin{vmatrix} a &amp; b \ c &amp; d \end{vmatrix}$</p><p>这个数学公式会换行显示：<br>$$\begin{vmatrix} a &amp; b \ c &amp; d \end{vmatrix}$$</p><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">\begin&#123;vmatrix&#125;</span> a &amp; b <span class="string">\\</span> c &amp; d <span class="string">\end&#123;vmatrix&#125;</span></span><br></pre></td></tr></table></figure><p>e^2=100</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="https://image-f2k.pages.dev/file/25d2cf009b5f08d6285cc.png" alt=""></p><p>该论文是一篇关于在大数据背景下实践用户画像统计方法的研究。</p><span id="more"></span><p>由于移动互联网的快速发展，人们使用智能手机的时间和频率不断增加，用户数据和行为数据呈指数级增长，这些数据有基本的大量性、实时性、准确性、空间性和动态性。作者通过收集2014年第四季度智能手机应用程序的使用行为数据，让用户成为研究对象，分析和实践用户画像、用户流失模型预测和用户行为聚类等问题。该论文总结和概述了用户画像的定义、建立用户标签系统的基本过程和统计分析方法，并提出了三个研究用户画像的基本要素。文章提出了新的用户流失场景定义，并建立了预测用户流失行为的模型。该论文还介绍了在市场营销中运用FRM指标分析用户行为的方法，并结合聚类分析的统计方法更好地解释和描述用户行为特征。</p><p>本研究探讨了在大数据背景下实践用户画像统计方法的重要性和方法，针对移动互联网的快速发展和爆炸性增长，作者通过分析和实践用户画像、用户流失模型预测和用户行为聚类等问题，提出了一种有效的解决方案。全文总结和概述了用户画像的定义、建立用户标签系统的基本过程和统计分析方法，并提出了三个研究用户画像的基本要素。文章还提出了新的用户流失场景定义，并建立了预测用户流失行为的模型。此外，研究中介绍了在市场营销中运用FRM指标分析用户行为的方法，并结合聚类分析的统计方法更好地解释和描述用户行为特征。</p><p>这是一个行内数学公式：$\begin{vmatrix} a &amp; b \ c &amp; d \end{vmatrix}$</p><p>这个数学公式会换行显示：</p><p>$$\begin{vmatrix} a &amp; b \ c &amp; d \end{vmatrix}$$</p><p>e^2=100<br>$$<br>\begin{vmatrix} a &amp; b \ c &amp; d \end{vmatrix}<br>$$</p>]]></content>
     
     
     <summary type="html">&lt;p&gt;&lt;img src=&quot;https://image-f2k.pages.dev/file/25d2cf009b5f08d6285cc.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;

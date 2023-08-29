@@ -1,3 +1,4 @@
+
 fetch('https://api.suyanw.cn//api/hotlist.php?type=微博')
   .then(data => data.json())
   .then(data => {
