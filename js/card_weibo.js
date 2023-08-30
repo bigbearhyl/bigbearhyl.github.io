@@ -36,3 +36,5 @@ fetch('https://api.suyanw.cn//api/hotlist.php?type=微博')
   .catch(function (error) {
     console.log(error);
   });
+
+  
