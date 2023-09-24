@@ -1,0 +1,1305 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><div id="myscoll"></div><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>王道机组知识点汇总 | LのBlog</title><meta name="keywords" content="王道,计算机组成原理"><meta name="author" content="L"><meta name="copyright" content="L"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="目录  第1章 计算机系统概述 第2章 数据的表示和运算 第3章 存储系统 第4章 指令系统 第5章 中央处理器 第6章 总线 第7章 输入&#x2F;输出系统  第1章 计算机系统概述 1.1 计算机发展历程 1）第一代计算机（1946-1957年）—— 电子管时代 ：逻辑元件采用电子管，使用机器语言进行编程 2）第二代计算机（1958-1964年）—— 晶体管时代 ：逻辑元件采用晶体管，软件开始使用高级">
+<meta property="og:type" content="article">
+<meta property="og:title" content="王道机组知识点汇总">
+<meta property="og:url" content="https://bigbearhyl.github.io/posts/36ff35da.html">
+<meta property="og:site_name" content="LのBlog">
+<meta property="og:description" content="目录  第1章 计算机系统概述 第2章 数据的表示和运算 第3章 存储系统 第4章 指令系统 第5章 中央处理器 第6章 总线 第7章 输入&#x2F;输出系统  第1章 计算机系统概述 1.1 计算机发展历程 1）第一代计算机（1946-1957年）—— 电子管时代 ：逻辑元件采用电子管，使用机器语言进行编程 2）第二代计算机（1958-1964年）—— 晶体管时代 ：逻辑元件采用晶体管，软件开始使用高级">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://source.fomal.cc/img/default_cover_14.webp">
+<meta property="article:published_time" content="2023-09-24T05:49:27.000Z">
+<meta property="article:modified_time" content="2023-09-24T05:53:11.401Z">
+<meta property="article:author" content="L">
+<meta property="article:tag" content="王道">
+<meta property="article:tag" content="计算机组成原理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://source.fomal.cc/img/default_cover_14.webp"><link rel="shortcut icon" href="/"><link rel="canonical" href="https://bigbearhyl.github.io/posts/36ff35da"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.js',
+      css: 'https://cdnjs.cloudflare.com/ajax/libs/flickr-justified-gallery/2.1.2/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '王道机组知识点汇总',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-24 13:53:11'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://cdn1.tianli0.top/npm/element-ui@2.15.6/packages/theme-chalk/lib/index.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/mainColor/heoMainColor.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/js-heo@1.0.11/poem/poem.css"><style id="themeColor"></style><style id="rightSide"></style><style id="defineBg"></style><style id="menu_shadow"></style><script src="/js/weather.js" async></script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0" async></script><link rel="stylesheet"  href="/css/setfont.css"><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="LのBlog" type="application/atom+xml">
+</head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/assets/r1.jpg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-home"></use></svg><span class="menu_word" style="font-size:17px"> 首页</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon--article"></use></svg><span class="menu_word" style="font-size:17px"> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-guidang1">                   </use></svg><span class="menu_word" style="font-size:17px"> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-sekuaibiaoqian">                   </use></svg><span class="menu_word" style="font-size:17px"> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-fenlei">                   </use></svg><span class="menu_word" style="font-size:17px"> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-pinweishenghuo"></use></svg><span class="menu_word" style="font-size:17px"> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/life/music/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-yinle">                   </use></svg><span class="menu_word" style="font-size:17px"> 八音盒</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/life/movies/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-dianying1">                   </use></svg><span class="menu_word" style="font-size:17px"> 影院</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/life/games/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-youxishoubing">                   </use></svg><span class="menu_word" style="font-size:17px"> 游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-xiangzi"></use></svg><span class="menu_word" style="font-size:17px"> 八宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/box/gallery/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-tubiaozhizuomoban">                   </use></svg><span class="menu_word" style="font-size:17px"> 画廊</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/box/animation/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-nvwumao">                   </use></svg><span class="menu_word" style="font-size:17px"> 动画</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/box/nav/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-zhifengche">                   </use></svg><span class="menu_word" style="font-size:17px"> 网址导航</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-wangye"></use></svg><span class="menu_word" style="font-size:17px"> 网站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/site/census/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon--tongjibiao">                   </use></svg><span class="menu_word" style="font-size:17px"> 网站统计</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/site/about/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-paperplane">                   </use></svg><span class="menu_word" style="font-size:17px"> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">LのBlog</a><div id="he-plugin-simple"></div></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-home"></use></svg><span class="menu_word" style="font-size:17px"> 首页</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon--article"></use></svg><span class="menu_word" style="font-size:17px"> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-guidang1">                   </use></svg><span class="menu_word" style="font-size:17px"> 归档</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-sekuaibiaoqian">                   </use></svg><span class="menu_word" style="font-size:17px"> 标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-fenlei">                   </use></svg><span class="menu_word" style="font-size:17px"> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-pinweishenghuo"></use></svg><span class="menu_word" style="font-size:17px"> 休闲</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/life/music/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-yinle">                   </use></svg><span class="menu_word" style="font-size:17px"> 八音盒</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/life/movies/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-dianying1">                   </use></svg><span class="menu_word" style="font-size:17px"> 影院</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/life/games/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-youxishoubing">                   </use></svg><span class="menu_word" style="font-size:17px"> 游戏</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-xiangzi"></use></svg><span class="menu_word" style="font-size:17px"> 八宝箱</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/box/gallery/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-tubiaozhizuomoban">                   </use></svg><span class="menu_word" style="font-size:17px"> 画廊</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/box/animation/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-nvwumao">                   </use></svg><span class="menu_word" style="font-size:17px"> 动画</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/box/nav/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-zhifengche">                   </use></svg><span class="menu_word" style="font-size:17px"> 网址导航</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-wangye"></use></svg><span class="menu_word" style="font-size:17px"> 网站</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/site/census/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon--tongjibiao">                   </use></svg><span class="menu_word" style="font-size:17px"> 网站统计</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/site/about/"><svg class="menu_icon faa-tada" aria-hidden="true" style="width:1.30em;height:1.30em;vertical-align:-0.15em;fill:currentColor;overflow:hidden;"><use xlink:href="#icon-paperplane">                   </use></svg><span class="menu_word" style="font-size:17px"> 关于</span></a></li></ul></div></div><center id="name-container"><a id="page-name" href="javascript:scrollToTop()">PAGE_NAME</a></center><div id="nav-right"><div id="search-button"><a class="search faa-parent animated-hover" title="检索站内任何你想要的信息"><svg class="faa-tada icon" style="height:24px;width:24px;fill:currentColor;position:relative;top:6px" aria-hidden="true"><use xlink:href="#icon-valentine_-search-love-find-heart"></use></svg><span> 搜索</span></a></div><a class="sun_moon faa-parent animated-hover" onclick="switchNightMode()" title="浅色和深色模式转换" id="nightmode-button"><svg class="faa-tada" style="height:25px;width:25px;fill:currentColor;position:relative;top:7px" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon">       </use></svg></a><div id="toggle-menu"><a><i class="fas fa-bars fa-fw"></i></a></div></div></div></nav><div id="post-info"><h1 class="post-title">王道机组知识点汇总</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><svg class="meta_icon post-meta-icon" style="width:30px;height:30px;position:relative;top:10px"><use xlink:href="#icon-rili"></use></svg><span class="post-meta-label">发表于 </span><time class="post-meta-date-created" datetime="2023-09-24T05:49:27.000Z" title="发表于 2023-09-24 13:49:27">2023-09-24</time><span class="post-meta-separator">|</span><svg class="meta_icon post-meta-icon" style="width:18px;height:18px;position:relative;top:5px"><use xlink:href="#icon-gengxin1"></use></svg><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-24T05:53:11.401Z" title="更新于 2023-09-24 13:53:11">2023-09-24</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><svg class="meta_icon post-meta-icon" style="width:18px;height:18px;position:relative;top:5px"><use xlink:href="#icon-biaoqian"></use></svg><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">计算机组成原理</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><svg class="meta_icon post-meta-icon" style="width:25px;height:25px;position:relative;top:8px"><use xlink:href="#icon-charuword"></use></svg><span class="post-meta-label">字数总计:</span><span class="word-count">1.7w</span><span class="post-meta-separator">|</span><svg class="meta_icon post-meta-icon" style="width:20px;height:20px;position:relative;top:5px"><use xlink:href="#icon-shizhong"></use></svg><span class="post-meta-label">阅读时长:</span><span>53分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="王道机组知识点汇总"><svg class="meta_icon post-meta-icon" style="width:25px;height:25px;position:relative;top:5px"><use xlink:href="#icon-eye"></use></svg><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h4 id="目录">目录</h4>
+<ul>
+<li>第1章 计算机系统概述</li>
+<li>第2章 数据的表示和运算</li>
+<li>第3章 存储系统</li>
+<li>第4章 指令系统</li>
+<li>第5章 中央处理器</li>
+<li>第6章 总线</li>
+<li>第7章 输入/输出系统</li>
+</ul>
+<h2 id="第1章-计算机系统概述">第1章 计算机系统概述</h2>
+<p><strong>1.1</strong> <strong>计算机发展历程</strong></p>
+<p>1）第一代计算机（1946-1957年）—— <strong>电子管时代</strong> ：逻辑元件采用电子管，使用机器语言进行编程<br>
+2）第二代计算机（1958-1964年）—— <strong>晶体管时代</strong> ：逻辑元件采用晶体管，软件开始使用高级语言，如Fortran<br>
+3）第三代计算机（1965-1971年）—— <strong>中小规模集成电路时代</strong> ：逻辑元件采用中小规模集成电路，开始有了分时操作系统<br>
+4）第四代计算机（1972-现在）—— <strong>超大规模集成电路时代</strong> ：逻辑元件采用大规模集成电路和超大规模集成电路，并产生了微处理器</p>
+<p>摩尔定律<br>
+32位、64位指的是机器字长，是指计算机进行一次整数运算所能处理的二进制数据的位数。</p>
+<p>电子计算机可分为电子模拟计算机和电子数字计算机。数字计算机又可按用途分为专用计算机和通用计算机。通用计算机又分为巨型机、大型机、中型机、小型机、微型机和单片机6类。</p>
+<p>计算机按指令和数据流还可分为：<br>
+1） <strong>单指令流和单数据流系统（SISD），也即冯诺依曼体系结构</strong><br>
+2）单指令流和多数据流系统（SIMD），包括阵列处理器和向量处理器系统<br>
+3） <strong>多指令流和单数据流系统（MISD），这种计算机实际上不存在</strong><br>
+4）多指令流和多数据流系统（MIMD），包括多处理器和多计算机系统</p>
+<p><strong>1.2</strong> <strong>计算机系统层次结构</strong></p>
+<p>硬件系统和软件系统共同构成了一个完整的计算机系统。对于某一个功能来说，其既可以用软件实现，也可以用硬件实现，则称为软硬件在逻辑上是等效的。</p>
+<p>早期的冯诺依曼机的特点：<br>
+1）计算机硬件系统由 <strong>运算器、存储器、控制器、输入设备、输出设备</strong> 5大部件组成<br>
+2）指令和数据以同等地位存于存储器内，并可按地址寻访<br>
+3）指令和数据均用二进制代码表示<br>
+4）指令由操作码和地址码组成，操作码用来表示操作的性质，地址码用来表示操作数在存储器中的位置<br>
+5）指令在存储器内按顺序存放<br>
+6）早期的冯诺依曼机 <strong>以运算器为中心</strong> ，输入/输出设备通过运算器与存储器传送数据</p>
+<p>现代计算机已经发展为 <strong>以存储器为中心</strong> ，使I/O操作尽可能地绕过CPU，直接在I/O设备和存储器之间完成，以提高系统的整体运行效率。</p>
+<p><strong>输入设备</strong> ：键盘、鼠标、扫描仪、摄像机等等<br>
+<strong>输出设备</strong> ：显示器、打印机<br>
+<strong>存储器</strong> ：主存储器和辅助存储器<br>
+主存储器的工作方式是按存储单元的地址进行存取的，称为按地址存取方式。（相联存储器是按内容访问的）<br>
+<strong>地址寄存器MAR用于寻址，其位数对应着存储单元的个数，MAR的长度与PC的长度相等。</strong><br>
+<strong>数据寄存器MDR和存储字长相等。</strong><br>
+MAR和MDR的位数分别为（地址码长度、存储字长）<br>
+<strong>注意：MAR和MDR虽然是存储器的一部分，但在现代CPU中却是存在于CPU中的，另外后文提到的高速缓存Cache 也是存在于CPU中。</strong><br>
+<strong>运算器</strong> ：算术逻辑单元ALU、通用寄存器（累加器ACC、乘商寄存器MQ、操作数寄存器X、变址寄存器IX、基址寄存器BR）、程序状态寄存器PSW<br>
+<strong>控制器</strong> ：程序计数器PC、指令寄存器IR、控制单元CU</p>
+<p><strong>系统软件、应用软件</strong><br>
+注意：数据库管理系统DBMS和数据库系统DBS是有区别的， <strong>DBMS是系统软件</strong><br>
+，而DBS一般由数据库、数据库管理系统、数据库管理员DBA和应用系统构成</p>
+<p><strong>机器语言是计算机唯一可以直接识别和执行的语言</strong> ；<br>
+汇编语言的程序必须经过一个称为 <strong>汇编程序</strong> 的系统软件的翻译，将其转换为计算机的机器语言后，才能在计算机的硬件系统上执行；<br>
+高级语言需要经过 <strong>编译程序编译</strong> 成汇编语言程序，然后经过 <strong>汇编操作</strong> 得到机器语言程序，或者 <strong>直接由高级语言程序翻译成机器语言程序</strong> 。</p>
+<p><strong>注意：(PC)指程序计数器PC中存放的内容，括号不能省略，即 (PC)+1- &gt;PC不能写成PC+1-&gt;PC</strong></p>
+<p><strong>1.3</strong> <strong>计算机的性能指标</strong></p>
+<p><strong>机器字长是指计算机进行一次整数运算（即定点整数运算）所能处理的二进制数据的位数</strong><br>
+，一般等于内部寄存器的大小，字长越长，数的表示范围越大，计算精度就越高。</p>
+<p><strong>数据通路带宽</strong> 是指数据总线一次所能并行传送信息的位数。</p>
+<p>吞吐量：系统吞吐量主要取决于主存的存取周期<br>
+响应时间：通常包括CPU时间（运行一个程序所花费的时间）与等待时间<br>
+<strong>CPU时钟周期</strong> ：即主频的倒数，它是CPU中最小的时间单位<br>
+<strong>主频（CPU时钟频率）</strong> ：主频的倒数是CPU时钟周期，对于同一个型号的计算机，其主频越高，完成指令的一个执行步骤所用的时间越短，执行指令的速度越快。<br>
+<strong>CPI</strong> ：执行一条指令所需的时钟周期数<br>
+CPU执行时间，指运行一个程序所花费的时间</p>
+<p>*<em>CPU执行时间=CPU时钟周期数/主频 =（指令条数 <em>CPI ）/主频</em></em><br>
+<strong>CPU</strong> <strong>的性能（CPU 执行时间）取决于三个要素：主频，每条指令执行所用的时钟周期数（ CPI ）、指令条数</strong></p>
+<p>MIPS：每秒执行多少百万条指令。MIPS=指令条数/（执行时间*10^6）=主频/CPI<br>
+MFLOPS：每秒执行多少百万次浮点计算，10^6<br>
+GFLOPS：每秒执行多少十亿次浮点计算，10^9<br>
+TFLOPS：每秒执行多少万亿次浮点计算，10^12<br>
+PFLOPS：每秒执行多少一千万亿次浮点计算，10^15<br>
+EFLOPS：每秒执行多少一百京次浮点计算，10^18<br>
+ZFLOPS：每秒执行多少十万京次浮点计算，10^21</p>
+<p><strong>1.5</strong> <strong>常见问题和易混淆知识点</strong></p>
+<p><strong>在逻辑功能上，软件和硬件是等效的</strong> 。在计算机系统中，许多功能既可以由硬件直接实现，也可以在硬件的配合下由软件实现。</p>
+<p><strong>翻译程序</strong> 是指把高级语言源程序翻译成机器语言程序（目标代码）的软件，可以分为两种：一种是 <strong>编译程序</strong><br>
+，将高级语言源程序一次全部翻译成目标程序，只要源程序不变，就无须重新编译，目标程序与体系结构相关，但仍不是计算机硬件能够直接执行的程序；另一种是<br>
+<strong>解释程序</strong> ，翻译一句执行一句，并且不会生成目标程序。<br>
+<strong>汇编程序</strong> 把汇编语言源程序翻译成机器语言程序。</p>
+<p>在计算机领域中，站在某一类用户的角度，如果感觉不到某个事物或属性的存在，即&quot;看&quot;不到某个事物或属性，则称为&quot;对该用户而言，某个事物或属性是透明的&quot;。<br>
+<strong>在CPU中，IR 、MAR 和 MDR对各类程序员都是透明的。</strong></p>
+<p><strong>机器字长：计算机能直接处理的二进制数据的位数，机器字长一般等于内部寄存器的大小，它决定了计算机的运算精度。</strong><br>
+<strong>指令字长：一个指令字中包含二进制代码的位数。</strong><br>
+<strong>存储字长：一个存储单元存储二进制代码的长度。</strong></p>
+<h2 id="第2章-数据的表示和运算">第2章 数据的表示和运算</h2>
+<p><strong>2.1</strong> <strong>数制与编码</strong></p>
+<p><strong>二进制转换为八进制和十六进制</strong><br>
+：以小数点为界，其整数部分，从小数点开始往左数，将一串二进制数分为3位（八进制）一组或4位（十六进制）一组，在数的最左边根据需要加&quot;0&quot;补齐；对于小数部分，从小数点开始往右数，将一串二进制数分为3位（八进制）一组或4位（十六进制）一组，在数的最右边根据需要加&quot;0&quot;补齐。<br>
+<strong>八进制或十六进制转换为二进制</strong> ：略。<br>
+<strong>任意进制转换为十进制</strong> ：略<br>
+<strong>十进制转换为任意进制</strong> ：基数乘除法。对于整数部分用除基取余法；对于小数部分用乘基取整法。</p>
+<p><strong>注意：并不是每一个十进制小数都可以准确地用二进制表示，但任意一个二进制小数都可以用十进制小数表示。</strong></p>
+<p><strong>真值</strong></p>
+<p><strong>机器数：</strong></p>
+<p>#机器数题目不说默认是补码，特别是对于负数。</p>
+<p>二进制编码的十进制数（BCD码）：<br>
+<strong>8421码</strong><br>
+：设其各位的数值为b3、b2、b1、b0，则权值从高到低依次为8/4/2/1，则它表示的十进制数为D=8b3+4b2+2b1+1b0。如果两个8421码相加之和小于等于(1001)，即(9)，则不需要修正；<br>
+<strong>如果相加之和大于等于(1010)，即(10)，则要加6修正</strong> 。<br>
+<strong>余3 码</strong> ：在8421码的基础上加上(0011)形成的，即每个数都多余&quot;3&quot;<br>
+<strong>2421码</strong> ：权值由高到低分别为2/4/2/1，特点是大于等于5的4位二进制数中最高位为1，小于5的最高位为0。如5为1011而不是0101。</p>
+<p><strong>奇偶校验码</strong> ：在原编码上加一个校验位，它的码距等于2， <strong>可以检测出一位错误（或奇数位错误），但不能确定出错的位置，也不能够检测出偶数位错误</strong><br>
+，增加的冗余位称为奇偶校验位。<br>
+奇校验码：整个校验码（有效信息位和校验位）中&quot;1&quot;的个数为奇数<br>
+偶校验码：整个校验码（有效信息位和校验位）中&quot;1&quot;的个数为偶数</p>
+<p><strong>海明（汉明）校验码：不但可以发现错位，还能指出错位的位置，为自动纠错提供了依据。</strong><br>
+L-1=D+C且D≥C，即编码最小码距L越大，则其检测错误的位数D越大，纠正错误的位数C也越大，且纠错能力恒小于或等于检错能力。<br>
+<strong>信息位n和校验位 k应满足n+k≤2^k-1</strong><br>
+求海明码的步骤（略）</p>
+<p><strong>循环冗余校验码（CRC）</strong> ：在K为信息码后再拼接R位的校验码，整个编码的长度为N位</p>
+<p><strong>2.2</strong> <strong>定点数的表示与运算</strong></p>
+<p><strong>原码表示法</strong> ：用机器数的最高位表示该数的符号，其余的各位表示数的绝对值<br>
+<strong>纯小数的原码定义</strong> ：若字长为n+1，则原码小数的表示范围为-(1-2^-n)≤x≤1-2 ^-n<br>
+[x] = x，1&gt;x≥0<br>
+[x] = 1-x = 1+|x|，0≥x&gt;-1<br>
+<strong>纯整数的原码定义</strong> ：若字长为n+1，则原码小数的表示范围为-(2^n-1)≤x≤2 ^n-1<br>
+[x] = 0,x，2^n&gt;x≥0<br>
+[x] = 2^n-x = 2 ^n+|x|，0≥x&gt;-2 ^n<br>
+<strong>注意：真值零的原码表示有正零和负零两种形式：[+0]=00000, [-0]=10000</strong></p>
+<p><strong>补码表示法</strong> ：<br>
+<strong>纯小数的补码定义</strong> ：若字长为n+1，则原码小数的表示范围为-1≤x≤1-2 ^-n<br>
+[x] = x，1&gt;x≥0<br>
+[x] = 2+x = 2-|x|，0≥x&gt;-1<br>
+<strong>纯整数的补码定义</strong> ：若字长为n+1，则原码小数的表示范围为-2^n≤x≤2 ^n-1<br>
+[x] = 0,x，2^n&gt;x≥0<br>
+[x] = 2^(n+1)+x = 2 ^(n+1)-|x|，0≥x≥-2 ^n<br>
+<strong>注意：真值零的补码表示是唯一的：[+0]=[-0]=0.0000</strong></p>
+<p><strong>由原码求补码、由补码求原码：</strong><br>
+<strong>对于正数，补码与原码的表示相同。</strong><br>
+<strong>对于负数，原码符号位不变，数值部分按位取反，末位加1.</strong></p>
+<p><strong>反码表示法</strong> ：<br>
+<strong>纯小数的原码定义</strong> ：若字长为n+1，则原码小数的表示范围为-(1-2^-n)≤x≤1-2 ^-n<br>
+[x] = x，1&gt;x≥0<br>
+[x] = 2-2^-n +x，0≥x&gt;-1<br>
+<strong>纯整数的原码定义</strong> ：若字长为n+1，则原码小数的表示范围为-(2^n-1)≤x≤2 ^n-1<br>
+[x] = 0,x，2^n&gt;x≥0<br>
+[x] = 2^(n+1)-1+x，0≥x&gt;-2 ^n<br>
+<strong>注意：真值零的原码表示有正零和负零两种形式：[+0]=0.0000, [-0]=1.1111</strong></p>
+<p><strong>移码表示法</strong> ：移码常用来表示浮点数的阶码，它只能表示整数。<br>
+[x] = 2^n+x（其中2 ^n&gt;x≥-2 ^n，机器字长为n+1）<br>
+<strong>注意</strong> ：<br>
+1）移码中零的表示唯一，[+0]=2^n+0=[-0]=2 ^n-0=100…0（n个0）<br>
+2）一个真值的移码和补码仅差一个符号位，补码的符号位取反即得移码（1表示正，0表示负，这与其他机器数的符号位取值正好相反）<br>
+3）移码全0时，对应真值的最小值-2^n；移码全1时，对应真值的最大值2 ^n -1<br>
+4）移码大真值就大，移码小真值就小</p>
+<p><strong>算术移位：移位对象是有符号数</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>码制</strong></th>
+<th><strong>添加代码</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>正数</td>
+<td>原码、补码、反码</td>
+</tr>
+<tr>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>负数</td>
+<td>原码</td>
+</tr>
+<tr>
+<td>负数</td>
+<td>补码</td>
+</tr>
+<tr>
+<td>负数</td>
+<td>反码</td>
+</tr>
+</tbody>
+</table>
+<p><strong>逻辑移位：将操作数当做无符号数看待，逻辑左移时，高位移丢，低位添0；逻辑右移时，低位移丢，高位添0.</strong><br>
+注意：逻辑移位不管左移还是右移，都是添0。</p>
+<p><strong>循环移位：</strong></p>
+<p><strong>溢出</strong> 是指运算结果超过了数的表示范围，称大于机器所能表示的最大正数为 <strong>上溢</strong> ，小于机器所能表示的最小负数为 <strong>下溢</strong> 。<br>
+<strong>仅当两个符号相同的数相加，或两个符号相异的数相减才可能产生溢出。</strong></p>
+<p>补码定点数加减运算溢出判断的方法有3种：<br>
+1） <strong>采用一位符号位</strong> ：只要参加运算的两个数符号相同，结果又与原操作数符号不同，则表示结果溢出。<br>
+2） <strong>采用双符号位</strong> ：运算结果的两个符号位相同，表示未溢出；运算结果的两个符号位不同，表示溢出，此时最高位符号位代表真正的符号。<br>
+00，表示结果为正数，无溢出；<br>
+01，表示结果正溢出；<br>
+10，表示结果负溢出；<br>
+11，表示结果为负数，无溢出。</p>
+<p>3） <strong>采用一位符号位根据数据位的进位情况判断溢出</strong> ：如果符号位的进位与最高数位的进位相同，说明没有溢出，否则表示发生溢出。</p>
+<p><strong>小端模式：</strong> 先存储低位字节、后存储高位字节的顺序（即从低位字节向高位字节顺序）存放字符串的内容</p>
+<p><strong>大端模式：</strong> 先存储高位字节、后存储低位字节的顺序（即从高位字节向低位字节顺序）存放字符串的内容</p>
+<p><strong>2.3</strong> <strong>浮点数的表示与运算</strong></p>
+<p>IEEE754标准中，规格化的短浮点数的真值为(-1)^S_1.M_2 ^(E-127)<br>
+规格化长浮点数的真值为(-1)^S_1.M_2 ^(E-1023)<br>
+其中，s=0表示正数，s=1表示负数；短浮点数E的取值为1~254（8位表示），M为23位，共32位；长浮点数E的取值为1<br>
+~2046（11位表示），M为52位，共64位。</p>
+<p><strong>浮点数的加减运算：</strong><br>
+<strong>1</strong> <strong>）对阶</strong><br>
+<strong>2</strong> <strong>）尾数求和</strong><br>
+<strong>3</strong> <strong>）规格化</strong><br>
+<strong>4</strong> <strong>）舍入</strong><br>
+<strong>5</strong> <strong>）溢出判断</strong></p>
+<p><strong>2.4</strong> <strong>算术逻辑单元ALU</strong></p>
+<p>运算器由算术逻辑单元ALU、累加器、状态寄存器和通用寄存器等组成。运算器的操作和操作种类由控制器决定，运算器处理的数据来自存储器，处理后的结果数据通常送回存储器，或暂存在运算器中。</p>
+<p><strong>一位全加器</strong> ：<br>
+<strong>和表达式</strong> ：Si=Ai⊕Bi⊕Ci-1（Ai、Bi、Ci-1有奇数个1，则Si=1，否则Si=0）<br>
+<strong>进位表达式</strong> ：Ci=AiBi+(Ai⊕Bi)Ci-1</p>
+<p>串行加法器：只有一个全加器<br>
+<strong>并行加法器</strong> ：由多个全加器组成，提高并行加法器速度的关键是尽量加快进位产生和传递的速度。<br>
+<strong>进位表达式</strong> ：Ci=Gi+PiCi-1，Gi是进位产生函数，Gi=AiBi；Pi是进位传递函数，Pi=Ai⊕Bi<br>
+并行加法器的进位通常分为串行进位和并行进位<br>
+分组并行进位方式：<br>
+<strong>单级先行进位方式又称为组内并行、组间串行进位方式；多组先行进位方式又称为组内并行、组间并行进位方式。</strong></p>
+<h2 id="第3章-存储系统">第3章 存储系统</h2>
+<p><strong>3.1</strong> <strong>存储器的概述</strong></p>
+<p>按在计算机中的作用（层次）分类： <strong>主存储器、辅助存储器、高速缓冲存储器Cache</strong><br>
+按存储介质分类： <strong>磁表面存储器</strong> （磁盘、磁带）、 <strong>磁芯存储器半导体存储器</strong> （MOS型存储器、双极型存储器）、 <strong>光存储器</strong> （光盘）<br>
+按存取方式分类： <strong>随机存储器</strong> （静态RAM、动态RAM）、 <strong>只读存储器</strong> （ROM）、 <strong>串行访问存储器</strong><br>
+（顺序存取存储器（磁带）、直接存取存储器（磁盘））<br>
+按信息的可保存性分类： <strong>易失性存储器</strong> （RAM）、 <strong>非易失性存储器</strong> （ROM、磁表面存储器、光存储器）</p>
+<p><strong>存储容量=存储字数 \字长，存储字数表示存储器的地址空间大小，字长表示一次存取操作的数据量</strong></p>
+<p><strong>存储速度：数据传输率 = 数据的宽度 / 存储周期</strong><br>
+<strong>存取时间Ta</strong> ：指从启动一次存储器操作到完成该操作所经历的时间，分为读出时间和写入时间<br>
+<strong>存取周期Tm</strong> ：指存储器进行一次完整的读写操作所需的全部时间，即连续两次独立地访问存储器操作（读或写操作）之间所需的最小时间间隔<br>
+<strong>主存带宽Bm</strong> ：又称数据传输率，表示每秒从主存进出信息的最大数量<br>
+<strong>存取时间不等于存储周期，通常存储周期大于存取时间</strong> 。</p>
+<p><strong>3.2</strong> <strong>存储器的层次化结构</strong></p>
+<p>&quot; <strong>Cache-主存&quot;：解决CPU和主存速度不匹配的问题</strong><br>
+<strong>&quot;</strong> <strong>主存- 辅存&quot;：解决存储系统的容量问题</strong></p>
+<p><strong>Cache 、主存能与CPU直接交换信息，辅存则要通过主存与CPU交换信息；主存与CPU、 Cache、辅存都能交换信息</strong></p>
+<p><strong>注意</strong> ： <strong>主存和Cache <strong>之间的数据调动是由</strong> 硬件 <strong>自动完成的，</strong> 对所有程序员均是透明的 <strong>；而</strong> 主存和辅存<br>
+<strong>之间的数据调动是由</strong> 硬件和操作系统 <strong>共同完成的，</strong> 对应用程序员是透明的</strong>。<br>
+Cache中的内容只是主存中内容的一部分，主存中的内容只是辅存中内容的一部分</p>
+<p><strong>3.3</strong> <strong>半导体随机存储器</strong></p>
+<p>1）存储矩阵<br>
+2）译码驱动<br>
+3）读写电路<br>
+4）读写控制线<br>
+<strong>5 ）片选线：确定哪个存储芯片被选中</strong><br>
+<strong>6</strong> <strong>）地址线：单向输入</strong><br>
+<strong>7</strong> <strong>）数据线：双向的，数据线数和地址线数共同反映存储芯片容量的大小。如地址线10根，数据线8根，则芯片容量 =2^10*8=8K 位</strong></p>
+<p><strong>静态随机存储器SRAM</strong> ：用双稳态触发器（六管MOS）来记忆信息，属于易失性半导体存储器，一般用来组成高速缓冲存储器<br>
+<strong>动态随机存储器DRAM</strong> ：利用存储元电路中栅极电容上的电荷来存储信息，一般用来组成大容量主存系统。刷新方式有三种：集中刷新、分散刷新、异步刷新</p>
+<table>
+<thead>
+<tr>
+<th><strong>SRAM</strong></th>
+<th><strong>DRAM</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>存储信息</td>
+<td>触发器</td>
+</tr>
+<tr>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>破坏性读出</td>
+<td>非</td>
+</tr>
+<tr>
+<td>需要刷新</td>
+<td>不要</td>
+</tr>
+<tr>
+<td>送行列地址</td>
+<td>同时送</td>
+</tr>
+<tr>
+<td>运行速度</td>
+<td>快</td>
+</tr>
+<tr>
+<td>集成度</td>
+<td>低</td>
+</tr>
+<tr>
+<td>发热量（功耗）</td>
+<td>大</td>
+</tr>
+<tr>
+<td>存储成本</td>
+<td>高</td>
+</tr>
+<tr>
+<td>主要用途</td>
+<td>高速缓存</td>
+</tr>
+</tbody>
+</table>
+<p><strong>只读存储器（ROM）</strong></p>
+<p>掩膜式只读存储器MROM：写入以后任何人都无法改变其内容<br>
+一次可编程只读存储器PROM：允许用户用专门设备写入程序，写入后内容就无法改变<br>
+可擦除可编程只读存储器EPROM：允许用户写入信息，而且可以对其内容进行多次改写<br>
+闪速存储器Flash Memory：在不加电时仍可长期保存信息且能进行快速擦除重写<br>
+固态硬盘SSD：用固态电子存储芯片阵列而制成的硬盘，由控制单元和存储单元（Flash芯片）组成</p>
+<p><strong>3.4</strong> <strong>主存储器与CPU的连接</strong></p>
+<p>1）主存储器通过数据总线、地址总线和控制总线与CPU连接<br>
+2）数据总线的位数与工作频率的乘积正比于数据传输率<br>
+3）地址总线的位数决定了可寻址的最大内存空间<br>
+4）控制总线（读/写）指出总线周期的类型和本次输入/输出操作完成的时刻</p>
+<p>主存容量的扩展： <strong>位扩展法</strong> 、 <strong>字扩展法</strong> 、 <strong>字位同时扩展法</strong></p>
+<p>CPU要实现对存储单元的访问，首先要选择存储芯片，即进行片选，然后再为选中的芯片依地址码选择相应的存储单元，以进行数据的存取，即进行字选。<br>
+片选信号的产生分为 <strong>线选法</strong> 和 <strong>译码片选法</strong> 。</p>
+<p><strong>3.5</strong> <strong>双口RAM和多模块存储器</strong></p>
+<p><strong>双端口RAM</strong> ：指同一个存储器有左、右两个独立的端口，分别具有两组相互独立的地址线、数据线和读写控制线，允许两个独立的控制器同时异步地访问存储单元。<br>
+1）两个端口不同时对同一地址单元存取数据（正常）<br>
+2）两个端口同时对同一地址单元读出数据（正常）<br>
+3）两个端口同时对同一地址单元写入数据（可能会写入错误）<br>
+4）两个端口同时对同一地址单元，一个写入数据，另一个读出数据（出现读出错误）</p>
+<p><strong>多模块存储器</strong> ：<br>
+<strong>单体多字存储器</strong> ：存储器中只有一个存储体，每个存储单元存储m个字，总线宽度也为m个字。一次并行读出m个字，地址必须顺序排列并处于同一存储单元<br>
+<strong>多体并行存储器</strong> ：由多体模块组成，每个模块都有相同的容量和存取速度，各模块都有独立的读写控制电路、地址寄存器和数据寄存器，既能并行工作，又能交叉工作<br>
+多体并行存储器由分为高位交叉编址（顺序方式）和低位交叉编址（交叉方式）<br>
+<strong>高位交叉编址</strong> ：高位地址表示体号，低位地址为体内地址<br>
+<strong>低位交叉编址</strong> ：低位地址为体号，高位地址为体内地址<br>
+流水线方式，存储器交叉模块数应大于等于 <strong>m=T/r</strong> （T为存取周期，r为总线传送周期），连续读取m个字所需时间为 <strong>t1=T+(m-1)r</strong><br>
+，而顺序方式连续读取m个字所需时间为t2=mT</p>
+<p><strong>3.6</strong> <strong>高速缓冲存储器</strong></p>
+<p>高速缓冲技术就是利用程序访问的 <strong>局部性原理</strong> 。<br>
+当CPU发出读请求时，如果访存地址在Cache中命中，就将此地址转换成Cache地址，直接对Cache进行读操作，与主存无关；如果Cache不命中，则仍需访问主存，并把此字所在的块一次从主存调入Cache内。若此时Cache已满，则需根据某种替换算法，用这个块替换掉Cache中原来的某块信息。<br>
+<strong>注意：CPU与Cache之间的数据交换以字位单位，而Cache与主存之间的数据交换以Cache块为单位</strong></p>
+<p><strong>Cache命中率</strong></p>
+<p><strong>平均访问时间</strong></p>
+<p><strong>Cache和主存的映射方式（ ** <strong>3</strong></strong> 种）**</p>
+<p><strong>直接映射</strong> ：j = i mod 2^c（j是Cache的块号，又称行号，i是主存的块号，2 ^c是Cache的总块数）<br>
+地址结构为：</p>
+<table>
+<thead>
+<tr>
+<th><strong>主存字块标记</strong></th>
+<th><strong>Cache字块地址（行号）</strong></th>
+<th><strong>字块内地址</strong></th>
+</tr>
+</thead>
+</table>
+<p><strong>全相联映射</strong> ：<br>
+地址结构为：</p>
+<table>
+<thead>
+<tr>
+<th><strong>主存字块标记</strong></th>
+<th><strong>字块内地址</strong></th>
+</tr>
+</thead>
+</table>
+<p><strong>组相联映射</strong> ：将Cache空间分成大小相同的组，主存的一个数据块可以装入到一组内的任何一个位置，即组间采取直接映射，而组内采取全相联映射。<br>
+j = i mod Q（j是Cache的组号，i是主存的块号，Q是Cache的组数，Q=1变为全相联映射，Q=Cache块数变为直接映射）<br>
+地址结构为：</p>
+<table>
+<thead>
+<tr>
+<th><strong>主存字块标记</strong></th>
+<th><strong>组地址（组号）</strong></th>
+<th><strong>字块内地址</strong></th>
+</tr>
+</thead>
+</table>
+<p><strong>置换算法</strong> ：<br>
+1）随机算法RAND：没有依据程序访问的局部性原理<br>
+2）先进先出算法FIFO：没有依据程序访问的局部性原理<br>
+3）近期最少使用算法LRU<br>
+4）最不经常使用算法LFU</p>
+<p><strong>Cache写策略</strong><br>
+<strong>对于Cache写命中</strong> ：<br>
+1） <strong>全写法</strong> （写直通法write-through）：必须把数据同时写入Cache和主存<br>
+2） <strong>写回法</strong> （write-back）：只修改Cache的内容，而不立即写入主存，只有当此块被换出时才写回主存<br>
+<strong>对于Cache写不命中</strong> ：<br>
+1） <strong>写分配法</strong> （write-allocate）：加载主存中的块到Cache中，然后更新这个Cache块<br>
+2） <strong>非写分配法</strong> （not-write-allocate）：只写入主存，不进行调块<br>
+<strong>非写分配法通常与全写法合用，写分配法通常和写回法合用。</strong></p>
+<p><strong>3.7</strong> <strong>虚拟存储器</strong></p>
+<p>主机和联机工作的辅存共同构成了虚拟存储器，对于应用程序而言， <strong>虚拟存储器是透明的</strong> 。</p>
+<p><strong>页式虚拟存储器</strong> ：以页为基本单位，虚拟空间和主存空间都被划分成同样大小的页，主存的页称为实页，虚存的页称为虚页。<br>
+<strong>把虚拟地址分为两个字段：虚页号和页内地址</strong> 。<br>
+<strong>优点</strong> 是页面的长度固定，页表简单，调入方便。 <strong>缺点</strong><br>
+是由于程序不可能正好是页面的整数倍，最后一页的零头将无法利用而造成浪费，并且页不是逻辑上独立的实体，所以处理、保护和共享都不及段式虚拟存储器方便。</p>
+<p><strong>段式虚拟存储器</strong> ：段是按程序的逻辑结构划分的，各个段的长度因程序而异。 <strong>把虚拟地址分为两部分：段号和段内地址</strong> 。<br>
+<strong>优点</strong> 是段的分界与程序的自然分界相对应，因而具有逻辑独立性，使它易于编译、管理、修改和保护，也便于多道程序的共享； <strong>缺点</strong><br>
+是因为段长度可变，分配空间不便，容易在段间留下碎片，不好利用，造成浪费。</p>
+<p><strong>段页式虚拟存储器</strong><br>
+：把程序按逻辑结构分段，每段再划分为固定大小的页，主存空间也划分为大小相等的页，程序对主存的调入、调出仍以页为基本传送单位。每个程序对应一个段表，每段对应一个页表，段的长度必须是页长的整数倍，段的起点必须是某一页的起点。<br>
+<strong>虚地址分为段号、段内页号、页内地址三部分</strong> 。<br>
+<strong>优点</strong> 是兼具页式和段式虚拟存储器的优点，可以按段实现共享和保护。 <strong>缺点</strong> 是在地址变换过程中需要两次查表，系统开销比较大。</p>
+<p><strong>快表TLB</strong> 依据程序执行的局部性原理，快表只是慢表Page的一个副本，而且只存放了慢表中很少的一部分。<br>
+查找时，快表和慢表同时进行，快表由于根据内容指定地址，一般使用相联存储器。<br>
+<strong>注意：TLB<br>
+是Page的一个很小的副本，所以若TLB命中则Page一定命中。在同时具有虚拟页式存储器（有TLB）和Cache的系统中，访问顺序为TLB-&gt;页表-&gt;Cache-&gt;主存。TLB，Page，Cache命中情况组合共有五种，分别为111，110 ，011， 010，000。</strong></p>
+<p><strong>虚拟存储器和Cache的不同之处</strong> ：<br>
+1）Cache主要解决系统速度，而虚拟存储器是为了解决主存容量<br>
+2）Cache全由硬件实现，是硬件存储器，对所有程序员透明；而虚拟存储器由OS和硬件共同实现，是逻辑上的存储器，对系统程序员不透明，但对应用程序员透明。<br>
+3）虚拟存储器系统不命中时对系统性能影响更大。<br>
+4）Cache不命中时主存能和CPU直接通信，同时将数据调入Cache中；而虚拟存储器系统不命中时，只能先由硬盘调入内存中，而不能直接和CPU通信。</p>
+<h2 id="第4章-指令系统">第4章 指令系统</h2>
+<p><strong>4.1</strong> <strong>指令格式</strong></p>
+<p>指令的长度是指一条指令中所包含的二进制代码的位数。指令字长取决于操作码的长度、操作数地址码的长度和操作数地址的个数。指令长度与机器字长没有固定的关系。</p>
+<p><strong>零地址指令</strong> ：<br>
+1）不需要操作数的指令：空操作指令、停机指令、关中断指令<br>
+2）零地址的运算类指令仅用在堆栈计算机中<br>
+<strong>一地址指令</strong> ：<br>
+1）只有目的操作数的单操作数指令，按A1地址读取操作数，进行OP操作后，结果存回原地址，即OP(A1)-&gt;;A，如加1，减1，求反、求补等<br>
+2）隐含约定目的地址的双操作数指令，按指令地址A1可读取源操作数，指令可隐含约定另一个操作数由ACC（累加器）提供，运算结果也存放在ACC中，即(ACC)OP(A1)-&gt;ACC<br>
+<strong>二地址指令</strong> ：给出目的操作数和源操作数的地址，其中目的操作数地址还用于保存本次的运算结果，即(A1)OP(A2)-&gt;A1<br>
+<strong>三地址指令</strong> ：(A1)OP(A2)-&gt;A3<br>
+<strong>四地址指令</strong> ：(A1)OP(A2)-&gt;A3，A4=下一条将要执行指令的地址</p>
+<p><strong>扩展操作码的指令格式</strong></p>
+<p><strong>4.2</strong> <strong>指令寻址方式</strong></p>
+<p><strong>指令寻址</strong></p>
+<p><strong>1）顺序寻址方式</strong> ：(PC)+1（1为指令字长）</p>
+<p><strong>2）跳跃寻址方式</strong> ：通过转移类指令实现。就是计算下一条指令的地址，然后修改程序计数器（PC）。</p>
+<p><strong>数据寻址</strong></p>
+<p><strong>1）隐含寻址</strong> ：在指令中隐含着操作数的地址，累加器ACC对单地址指令格式来说是隐含地址<br>
+<strong>优点</strong> ：有利于缩短指令字长<br>
+<strong>缺点</strong> ：需增加存储操作数或隐含地址的硬件</p>
+<p><strong>2）立即（数）寻址</strong> ：指出的是操作数本身，又称为立即数<br>
+<strong>优点</strong> ：指令在执行阶段不访问主存，指令执行时间最短<br>
+<strong>缺点</strong> ：A的位数限制了立即数的范围</p>
+<p><strong>3）直接寻址</strong> ：指令字中的形式地址A就是操作数的真实地址EA，即EA=A<br>
+<strong>优点</strong> ：简单，指令在执行阶段仅访问一次主存，不需要专门计算操作数的地址<br>
+<strong>缺点</strong> ：A的位数决定了该指令操作数的寻址范围，操作数的地址不易修改</p>
+<p><strong>4）间接寻址</strong> ：指令的地址字段给出的形式地址不是操作数的真正地址，而是操作数有效地址所在的存储单元的地址，也就是操作数地址的地址，即EA=(A)<br>
+<strong>优点</strong> ：可扩大寻址范围，便于编制程序（用间接寻址可以方便地完成子程序返回）<br>
+<strong>缺点</strong> ：指令在执行阶段要多次访存（一般问到扩大寻址范围通常都是寄存器间接寻址）</p>
+<p><strong>5 ）寄存器寻址</strong> ：在指令字中直接给出操作数所在的寄存器编号，即EA=Ri，其操作数在由Ri所指的寄存器内<br>
+<strong>优点</strong> ：指令在执行阶段不访问主存，只访问寄存器，执行速度快，支持向量/矩阵运算<br>
+<strong>缺点</strong> ：寄存器价格昂贵，寄存器个数有限</p>
+<p><strong>6）寄存器间接寻址</strong> ：在寄存器Ri中给出的不是一个操作数，而是操作数所在主存单元的地址，即EA=(Ri)<br>
+<strong>优点</strong> ：与一般间接寻址相比速度更快<br>
+<strong>缺点</strong> ：需要访问主存</p>
+<p><strong>7）相对寻址</strong> ：把程序计数器PC的内容加上指令格式中的形式地址A而形成操作数的有效地址，即EA=(PC)+A<br>
+<strong>优点</strong> ：操作数的地址不是固定的，随着PC的变化而变化，并且与指令地址之间总是相差一个固定值，因此便于程序浮动，广泛应用于转移指令</p>
+<p><strong>8）基址寻址</strong> ：将CPU中基址寄存器（BR）的内容加上指令格式中的形式地址A，而形成操作数的有效地址，即EA=(BR)+A<br>
+<strong>优点</strong> ：可扩大寻址范围，用户不必考虑自己的程序位于主存的哪一空间区域，故有利于多道程序设计，以及用于编制浮动程序</p>
+<p><strong>9）变址寻址</strong> ：有效地址EA等于指令字中的形式地址A与变址寄存器IX的内容相加之和，即EA=(IX)+A<br>
+<strong>优点</strong> ：可扩大寻址范围，用于处理数组问题</p>
+<p><strong>10 ）堆栈寻址</strong> ：硬堆栈、软堆栈</p>
+<table>
+<thead>
+<tr>
+<th><strong>寻址方式</strong></th>
+<th><strong>有效地址</strong></th>
+<th><strong>访存次数</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>隐含寻址</td>
+<td>程序指定</td>
+<td>0</td>
+</tr>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>立即寻址</td>
+<td>A即是操作数</td>
+<td>0</td>
+</tr>
+<tr>
+<td>直接寻址</td>
+<td>EA=A</td>
+<td>1</td>
+</tr>
+<tr>
+<td>一次间接寻址</td>
+<td>EA=(A)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>寄存器寻址</td>
+<td>EA=Ri</td>
+<td>0</td>
+</tr>
+<tr>
+<td>寄存器间接一次寻址</td>
+<td>EA=(Ri)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>相对寻址</td>
+<td>EA=(PC)+A</td>
+<td>1</td>
+</tr>
+<tr>
+<td>基址寻址</td>
+<td>EA=(BR)+A</td>
+<td>1</td>
+</tr>
+<tr>
+<td>变址寻址</td>
+<td>EA=(IX)+A</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>X86汇编指令入门</p>
+<p><strong>4.3 CISC和 RISC的基本概念</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>类别</strong></th>
+<th><strong>CISC</strong></th>
+<th><strong>RISC</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>指令系统</td>
+<td>复杂，庞大</td>
+<td>简单，精简</td>
+</tr>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>指令数目</td>
+<td>一般大于200条</td>
+<td>一般小于100条</td>
+</tr>
+<tr>
+<td>指令字长</td>
+<td>不固定</td>
+<td>固定</td>
+</tr>
+<tr>
+<td>可访存指令</td>
+<td>不加限制</td>
+<td>只有Load/Store指令</td>
+</tr>
+<tr>
+<td>各种指令执行时间</td>
+<td>相差较大</td>
+<td>绝大多数在一个周期内完成</td>
+</tr>
+<tr>
+<td>各种指令使用频度</td>
+<td>相差很大</td>
+<td>都比较常用</td>
+</tr>
+<tr>
+<td>通用寄存器数量</td>
+<td>较少</td>
+<td>多</td>
+</tr>
+<tr>
+<td>目标代码</td>
+<td>难以用优化编译生成高效的目标代码程序</td>
+<td>采用优化的编译程序，生成代码较为高效</td>
+</tr>
+<tr>
+<td>控制方式</td>
+<td>绝大多数为微程序控制</td>
+<td>绝大多数为组合逻辑控制</td>
+</tr>
+<tr>
+<td>指令流水线</td>
+<td>可以通过一定方式实现</td>
+<td>必须实现</td>
+</tr>
+</tbody>
+</table>
+<h2 id="第5章-中央处理器">第5章 中央处理器</h2>
+<p><strong>5.1 CPU的功能和基本结构</strong></p>
+<p>具体功能：指令控制、操作控制、时间控制、数据加工、中断处理</p>
+<p><strong>运算器</strong> ：主要由算术逻辑单元、暂存寄存器、累加寄存器、通用寄存器组、程序状态字寄存器、移位器、计数器等组成<br>
+<strong>控制器</strong> ：主要由程序计数器、指令寄存器、指令译码器、存储器地址寄存器、存储器数据寄存器、时序系统和微操作信号发生器等组成</p>
+<p><strong>注意：通用寄存器组、程序状态字寄存器、程序计数器对用户是可见的，存储器地址寄存器、存储器数据寄存器、指令寄存器对用户是透明的，不可见的。</strong></p>
+<p><strong>5.2</strong> <strong>指令执行过程</strong></p>
+<p>CPU从主存中取出并执行一条指令所需的全部时间称为 <strong>指令周期</strong><br>
+，也就是CPU完成一条指令的时间。一个指令周期通常包含若干机器周期，一个机器周期又包含若干时钟周期。</p>
+<p>一个完整的指令周期应包括 <strong>取指、间址、执行和中断</strong> 四个周期。<br>
+<strong>注意</strong> ：中断周期中进栈操作是 <strong>将SP减1</strong> ，和传统意义上的进栈操作相反，因为计算机的堆栈中都是向低地址增加，所以进栈操作是减1，不是加1.</p>
+<p><strong>取指周期</strong> 是根据PC中的内容从主存中取出指令代码并存放在指令寄存器IR中，取指令的同时，PC加1<br>
+<strong>间址周期</strong> 是取操作数有效地址<br>
+<strong>执行周期</strong> 是根据IR中的指令字的操作码和操作数通过ALU操作产生执行结果<br>
+<strong>中断周期</strong> 是处理中断请求，假设程序断点存入堆栈中，并用SP表示栈顶地址，而且进栈操作是先修改栈顶指针，后存入数据。</p>
+<p>指令执行方案</p>
+<p><strong>单指令周期</strong> ：对所有指令都选用相同的时间来完成，指令之间串行执行，指令周期取决于执行时间最长的指令的执行时间。<br>
+<strong>多指令周期</strong> ：指令之间串行执行，不再要求所有指令占用相同的执行时间</p>
+<p><strong>流水线方案</strong> ：指令之间并行执行，尽量让多条指令同时执行，但各自处在不同的执行步骤中</p>
+<p><strong>5.3</strong> <strong>数据通路的功能和基本结构</strong></p>
+<p>数据在功能部件之间传送的路径称为 <strong>数据通路</strong> ，其功能是 <strong>实现CPU内部的运算器和寄存器以及寄存器之间的数据交换</strong> 。</p>
+<p>基本结构：<br>
+1） <strong>CPU内部单总线方式</strong> ：所有寄存器的输入端和输出端都连接到一条公共的通路上。结构简单，但数据传输中存在较多冲突现象，性能较低</p>
+<p>2） <strong>CPU内部三总线方式</strong> ：所有寄存器的输入端和输出端都连接到多条公共的通路上。效率CPU内部单总线方式相对有所提高</p>
+<p>3） <strong>专用数据通路方式</strong> ：根据指令执行过程中的数据和地址的流动方向安排连接线路，避免使用共享的总线。性能较高，但硬件量大</p>
+<p>前两者为内部总线，第三个为专用数据总线</p>
+<p>#区分内部总线和系统总线（地址总线，数据总线，控制总线）</p>
+<p><strong>5.4</strong> <strong>控制器的功能和工作原理</strong></p>
+<p>控制器的结构：</p>
+<p>1）运算器部件通过数据总线与内存储器、输入设备和输出设备传送数据<br>
+2）输入设备和输出设备通过接口电路与总线相连接<br>
+3）内存储器、输入设备和输出设备从地址总线接收地址信息，从控制总线得到控制信号，通过数据总线与其他部件传送数据<br>
+4）控制器部件从数据总线接收指令信息，从运算器部件接收指令转移地址，送出指令地址到地址总线，还要向系统中的部件提供它们运行所需要的控制信号</p>
+<p><strong>控制器的主要功能</strong> 有：<br>
+1）从主存中取出一条指令，并指出下一条指令在主存中的位置<br>
+2）对指令进行译码或测试，产生相应的操作控制信号，以便启动规定的动作<br>
+3）指挥并控制CPU、主存、输入和输出设备之间的数据流动方向</p>
+<p><strong>1）硬布线控制器由复杂的组合逻辑门电路和一些触发器构成，因此又称为组合逻辑控制器</strong> 。<br>
+通常以存取周期作为基准时间，即内存中读取一个指令字的最短时间作为机器周期。在存储字长等于指令字长的前提下，取指周期也可看做机器周期。</p>
+<p><strong>2）微程序控制器采用存储逻辑实现 <strong>，也就是把微操作信号代码化，使每条机器指令转化成为一段微程序并存入一个专门的存储器（控制存储器）中，</strong><br>
+微操作控制信号由微指令产生</strong>。</p>
+<p>微程序设计思想是将每一条机器指令编写成一个微程序，每一个微程序包含若干条微指令，每一条微指令对应一个或几个微操作命令。<br>
+微命令是微操作的控制信号，微操作是微命令的执行过程。<br>
+<strong>注意</strong> ：在组合逻辑控制器中也存在微命令与微操作这两个概念，它们并非只是微程序控制器的专有概念。<br>
+微指令是若干微命令的集合，存放微指令的控制存储器的单元地址称为微地址。<br>
+微周期通常指从控制存储器中读取一条微指令并执行相应的微操作所需的时间。<br>
+主存储器用于存放程序和数据，在CPU外部，用RAM实现；控制存储器CM用于存放微程序，在CPU内部，用ROM实现。<br>
+<strong>注意：若指令系统中具有n种机器指令，则控制存储器中的微程序数至少是n+1个（1为公共的取指微程序）</strong></p>
+<p><strong># 微命令（控制序列的最小单位），微操作（最小操作），微指令（若干微命令的集合），微周期（读取并执行微指令的时间），微程序（微指令的有序集合）</strong></p>
+<p><strong>微指令的编码方式又称为微指令的控制方式</strong> ，指如何对微指令的控制字段进行编码，以形成控制信号。目标是在保证速度的情况下，尽量缩短微指令字长。<br>
+1） <strong>直接编码（直接控制）方式</strong><br>
+2） <strong>字段直接编码方式</strong> ：将微指令的微命令字段分成若干个小字段，把互斥性微命令组合在同一字段中，把相容性微命令组合在不同的字段中<br>
+3） <strong>字段间接编码方式，又称隐式编码</strong></p>
+<p><strong>#微命令的编码方式</strong></p>
+<p><strong>微指令的地址形成方式</strong> ：<br>
+1） <strong>直接由微指令的下地址字段指出（又称为断定方式）</strong> ：由微指令的下地址字段直接指出后继微指令的地址<br>
+2） <strong>根据机器指令的操作码形成</strong> ：当机器指令取至指令寄存器后，微地址的地址由操作码经微地址形成部件形成</p>
+<p><strong>微指令的格式</strong> ：<br>
+1） <strong>水平型微指令</strong><br>
+：指令字中的一位对应一个控制信号，有输出时为1，否则为0。一条水平型微指令定义并执行几种并行的基本操作。优点是微程序短，执行速度快；缺点是微指令长，编写微程序较麻烦。<br>
+2） <strong>垂直型微指令</strong><br>
+：类似机器指令操作码的方式，设置微操作码字段，由微操作码规定微指令的功能。一条垂直型微指令只能定义并执行一种基本操作。优点是微指令短、简单、规整，便于编写微程序；缺点是微程序长，执行速度慢，工作效率低。<br>
+3） <strong>混合型微指令</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>类别</strong></th>
+<th><strong>微程序控制器</strong></th>
+<th><strong>硬布线控制器</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>工作原理</td>
+<td>微操作控制信号以微程序的形式存放在控制存储器中，执行指令时读出即可</td>
+<td>微操作控制信号由组合逻辑电路根据当前的指令码、状态和时序，即时产生</td>
+</tr>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>执行速度</td>
+<td>慢</td>
+<td>快</td>
+</tr>
+<tr>
+<td>规整性</td>
+<td>较规整</td>
+<td>烦琐、不规整</td>
+</tr>
+<tr>
+<td>应用场合</td>
+<td>CISC CPU</td>
+<td>RISC CPU</td>
+</tr>
+<tr>
+<td>易扩充性</td>
+<td>易扩充修改</td>
+<td>困难</td>
+</tr>
+</tbody>
+</table>
+<p><strong>5.5</strong> <strong>指令流水线</strong></p>
+<p>一条指令的执行过程：<br>
+<strong>取指</strong> ：根据PC内容访问主存储器，取出一条指令送到IR中<br>
+<strong>分析</strong> ：对指令操作码进行译码，按照给定的寻址方式和地址字段中的内容形成操作数的有效地址EA，并从有效地址EA中取出操作数<br>
+<strong>执行</strong> ：根据操作码字段，完成指令规定的功能，即把运算结果写到通用寄存器或主存中</p>
+<p>1）顺序执行方式：前一条指令执行完后，才启动下一条指令，T=3nt<br>
+2）一次重叠执行方式：第k条指令的执行阶段和第k+1条指令的取指阶段同时进行，T=(1+2n)t<br>
+3）二次重叠执行方式：把取第k+1条指令提前到分析第k条指令的期间完成，而将分析第k+1条指令与执行第k条指令同时进行，T=(2+n)t</p>
+<p>流水线的分类</p>
+<p>按使用级别分：部件功能级流水线、处理机级流水线、处理机间级流水线<br>
+按完成功能分：单功能流水线、多功能流水线<br>
+按连接方式分：动态流水线、静态流水线<br>
+按有无反馈信号分：线性流水线、非线性流水线</p>
+<p><strong>影响流水线的因素</strong><br>
+1） <strong>结构相关（资源冲突）：由于多条指令在同一时刻争用同一资源而形成的冲突</strong><br>
+解决办法：<br>
+a. 前一指令访存时，使后一条相关指令（以及其后续指令）暂停一个时钟周期<br>
+b. 单独设置数据存储器和指令存储器，使两项操作各自在不同的存储器中进行，这属于资源重复配置</p>
+<p>2） <strong>数据相关（数据冲突，数据冒险）：必须等前一条指令执行完才能执行后一条指令的情况</strong><br>
+a. 把遇到数据相关的指令及其后续指令都暂停一至几个时钟周期，可分为硬件阻塞（stall）和软件插入&quot;NOP&quot;指令两种方法<br>
+b.<br>
+设置相关专用通路，即不等前一条指令把计算结果返回寄存器组，下一条指令也不再读寄存器组，而是直接把前一条指令的ALU的计算结果作为自己的输入数据开始计算过程，使本来需要暂停的操作可以继续执行，称为数据旁路技术<br>
+c. 通过编译器对数据相关的指令编译优化的方法，调整指令顺序来解决数据相关</p>
+<p>3） <strong>控制相关（控制冲突，控制冒险）：遇到转移指令和其他改变PC值得指令而造成断流</strong><br>
+a.<br>
+对转移指令进行分支预测，分为简单（静态）预测和动态预测，静态预测总是预测条件不满足，即继续执行后续指令；动态预测根据程序执行的历史情况，进行动态预测调整。<br>
+b. 预取转移成功和不成功两个控制流方向上的目标指令<br>
+c. 加快和提前形成条件码<br>
+d. 提高转移方向的猜准率</p>
+<p>#两条连续的指令读取相同的寄存器时，就会产生RAR（读后读）相关，这种相关不会影响流水线；<br>
+当某条指令要读取上一条指令所写入的寄存器时，就会产生RAW（写后读）相关，这种称数据相关或真相关，影响流水线。按序流动的流水线只可能出现RAW相关。<br>
+当某条指令的上条指令要读/写该指令的输出寄存器时，就会产生WAR（读后写）和WAW（写后写）相关。在非按序流动的流水线中，既可能发生RAW，也可能发生WAR和WAW相关。<br>
+对流水线影响最严重的指令相关是数据相关。</p>
+<p><strong>流水线的性能指标</strong><br>
+1） <strong>流水线的吞吐率</strong><br>
+：，n是任务数，Tk是处理完成n个任务所用的时间；一条k段线性流水线能够在k+n-1个时钟周期内完成n个任务，此时，t为时钟周期；当n趋于无穷时，得到最大吞吐率<br>
+2） <strong>流水线的加速比</strong> ：完成同样一批任务，不使用流水线所用的时间与使用流水线所用的时间之比。，当n趋于无穷时，得到最大加速比<br>
+3） <strong>流水线的效率</strong> ：=n个任务占用k时空区有效面积/n个任务所用的时间与k个流水段所围成的时空区总面积=，当n趋于无穷时，最高效率为</p>
+<p>超标量流水线技术：每个时钟周期内可并发多条独立指令，即以并行操作方式将两条或多条指令编译并执行，为此需配置多个功能部件<br>
+超流水线技术：在一个时钟周期内再分段，在一个时钟周期内一个功能部件使用多次<br>
+超长指令字：将多条能并行操作的指令组合成一条具有多个操作码字段的超长指令字，为此需要采用多个处理部件</p>
+<h2 id="第6章-总线">第6章 总线</h2>
+<p><strong>6.1</strong> <strong>总线概述</strong></p>
+<p><strong>总线</strong> 是一组能为多个部件 <strong>分时共享</strong> 的公共信息传送线路。 <strong>分时和共享</strong> 是总线的两个特点。<br>
+分时是指同一时刻只允许由一个部件向总线发送信息；共享是指总线上可以挂接多个部件，各个部件之间互相交换的信息都可以通过这组线路分时共享。在某一时刻只允许由一个部件向总线发送信息，但多个部件可以同时从总线上接收相同的信息。</p>
+<p>主设备：是指获得总线控制权的设备<br>
+从设备：是指被主设备访问的设备，只能响应从主设备发来的各种总线命令</p>
+<p>总线特性：机械特性、电气特性、功能特性、时间特性</p>
+<p><strong>猝发传输方式</strong> ：在一个总线周期内传输存储地址连续的多个数据字的总线传输方式叫猝发传送</p>
+<p><strong>总线的分类</strong> ：<br>
+1） <strong>片内总线</strong> ：CPU芯片内部寄存器与寄存器之间、寄存器与ALU之间的公共连接线<br>
+2） <strong>系统总线</strong> ：计算机系统内各功能部件（CPU、主存、I/O接口）之间相互连接的总线<br>
+a. <strong>数据总线</strong> ：用来传输各功能部件之间的数据信息，双向传输，其位数与机器字长、存储字长有关<br>
+b. <strong>地址总线</strong> ：用来指出数据总线上的源数据或目的数据所在的主存单元或I/O接口的地址，单向传输，其位数与主存地址空间有关<br>
+c. <strong>控制总线</strong> ：传输控制信息，包括CPU送出的控制命令和主存（或外设）返回CPU的反馈信号<br>
+3） <strong>通信总线</strong> ：用于计算机系统之间或计算机系统与其他系统（如远程通信设备、测试设备）之间信息传送的总线，也称为 <strong>外部总线</strong></p>
+<p>系统总线的结构：<br>
+1）单总线结构：CPU、主存、I/O设备（通过I/O接口）都挂在一组总线上<br>
+2）双总线结构：主存总线、I/O总线<br>
+3）三总线结构：主存总线、I/O总线、DMA总线</p>
+<p><strong>总线的性能指标</strong> ：<br>
+1）传输周期，简称总线周期<br>
+2）时钟周期<br>
+3）工作频率：总线周期的倒数，总线工作频率=时钟频率/N（N表示N个时钟周期）<br>
+4）时钟频率<br>
+5） <strong>总线宽度</strong> ，又称总线位宽，是总线上同时能够传输的数据位数，通常是指数据总线的根数<br>
+6） <strong>总线带宽</strong> ，总线的数据传输率，即单位时间内总线上可传输数据的位数，总线带宽=总线工作频率 * (总线宽度/8)</p>
+<p>总线带宽=总线宽度 * 总线频率</p>
+<p><strong>6.2</strong> <strong>总线仲裁</strong></p>
+<p>为解决多个主设备同时竞争总线控制权的问题，应当采用总线仲裁部件，以某种方式选择一个主设备优先获得总线控制权。</p>
+<p><strong>集中仲裁方式</strong> ：将所有的总线请求集中起来，利用一个特定的裁决算法进行裁决<br>
+1） <strong>链式查询方式</strong> ：离总线控制器越近的部件，其优先级越高。优点：链式查询方式优先级固定，结构简单，扩充容易；缺点：对故障敏感，优先级不能改变<br>
+2） <strong>计数器定时查询方式</strong> ：优点：设备使用总线的优先级相等，优先次序可以改变，对故障不敏感；缺点：增加了控制线数，相对复杂<br>
+3） <strong>独立请求方式</strong> ：优点：响应速度快，对优先次序的控制相当灵活；缺点：控制线数量多，逻辑更复杂</p>
+<table>
+<thead>
+<tr>
+<th><strong>链式查询</strong></th>
+<th><strong>计数器定时查询</strong></th>
+<th><strong>独立请求</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>控制线数</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>2n+1</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>优点</td>
+<td>优先级固定；结构简单；扩充容易</td>
+<td>优先级灵活</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>对电路故障敏感；优先级不灵活</td>
+<td>控制线多；控制复杂</td>
+</tr>
+</tbody>
+</table>
+<p><strong>分布仲裁方式</strong><br>
+：不需要中央仲裁器，每个潜在的主模块都有自己的仲裁号和仲裁器。如果仲裁总线上的号优先级高，则它的总线请求不予响应，并撤销它的仲裁号，最后获胜者的仲裁号保留在仲裁总线上。</p>
+<p><strong>6.3</strong> <strong>总线操作和定时</strong></p>
+<p>一个总线周期可分为4个阶段：<br>
+1） <strong>申请分配阶段</strong> ：由需要使用总线的主模块（或主设备）提出申请，经总线仲裁机构决定将下一传输周期的总线使用权授予某一申请者。<br>
+2） <strong>寻址阶段</strong> ：主模块通过总线发出本次要访问的从模块（或从设备）的地址及有关命令，启动参与本次传输的从模块。<br>
+3） <strong>传输阶段</strong> ：主模块和从模块进行数据交换，可单向或双向进行数据传送<br>
+4） <strong>结束阶段</strong> ：主模块的有关信息均从系统总线上撤除，让出总线使用权</p>
+<p><strong>同步定时方式</strong> ：系统采用一个 <strong>统一的时钟信号</strong> 来协调发送和接收双方的传递定时关系。适用于总线长度较短及总线所接部件的存取时间比较接近的系统。<br>
+优点：传送速度快，具有较高的传输速率；总线控制逻辑简单<br>
+缺点：主从设备属于强制性同步；不能及时进行数据通信的有效性检验，可靠性较差</p>
+<p><strong>异步定时方式</strong> ：没有统一的时钟，也没有固定的时间间隔， <strong>完全依靠传送双方相互制约的&quot;握手&quot;信号</strong> 来实现定时控制。<br>
+优点：总线周期长度可变，能保证两个工作速度相差很大的部件或设备之间可靠地进行信息交换，自动适应时间的配合<br>
+缺点：比同步控制方式稍复杂一些，速度比同步定时方式慢<br>
+1） <strong>不互锁方式</strong> ：主设备自动撤销&quot;请求&quot;信号，从设备自动撤销&quot;回答&quot;信号，双方不存在互锁关系<br>
+2） <strong>半互锁方式</strong><br>
+：主设备发出&quot;请求&quot;信号后，必须待接到从设备的&quot;回答&quot;信号后，才撤销&quot;请求&quot;信号，有互锁关系；而从设备在接到&quot;请求&quot;信号后，发出&quot;回答&quot;信号，但不必等待获知主设备的&quot;请求&quot;信号已经撤销，而是隔一段时间后自动撤销&quot;回答&quot;信号，不存在互锁关系。<br>
+3） <strong>全互锁关系</strong><br>
+：主设备发出&quot;请求&quot;信号后，必须待从设备&quot;回答&quot;后，才撤销&quot;请求&quot;信号；从设备发出&quot;回答&quot;信号，必须待获知主设备&quot;请求&quot;信号已撤销后，再撤销其&quot;回答&quot;信号。双方存在互锁关系。</p>
+<p><strong>6.4</strong> <strong>总线标准</strong></p>
+<p><strong>ISA总线 <strong>：最早出现的微型计算机的</strong> 系统总线</strong>标准，应用在IBM的AT机上<br>
+<strong>EISA总线</strong> ：为配合32位CPU而设计的总线扩展标准，EISA对ISA完全兼容<br>
+<strong>VESA总线 <strong>：32位标准的计算机</strong> 局部总线 <strong>，是针对多媒体PC要求</strong> 高速传送活动图像的大量数据</strong>应运而生的<br>
+<strong>PCI总线 <strong>：高性能的32位或64位总线，专为</strong> 高度集成的外围部件、扩充插板和处理器 <strong><strong>/</strong></strong> 存储器系统而设计的互联机制<br>
+<strong>。目前常用的PCI适配器有</strong> 显卡、声卡、网卡 <strong>等。PCI总线</strong> 支持即插即用 <strong>，与处理器时钟频率无关，属于</strong> 局部总线<br>
+<strong>，可以通过</strong> 桥连接</strong>实现多层PCI总线<br>
+<strong>PCI-Express（ PCI-E ）是最新的总线和接口标准，将全面取代现行的 PCI和AGP，最终实现总线标准的统一</strong><br>
+<strong>AGP</strong> ：是一种 <strong>视频接口标准</strong> ，专用于 <strong>连接主存和图形存储器</strong> ，属于 <strong>局部总线</strong> 。AGP技术为<br>
+<strong>传输视频和三维图形数据</strong> 提供了切实可行的解决方案。<br>
+<strong>RS-232C总线 <strong>是由美国电子工业协会（EIA）推荐的一种</strong> 串行通信总线标准 <strong>，是应用于</strong><br>
+串行二进制交换</strong>的数据终端设备（DTE）和数据通信设备（DCE）之间的标准接口<br>
+<strong>USB总线 <strong>：连接外部设备的I/O总线标准，属于</strong> 设备总线 <strong>，具有</strong> 即插即用、热插拔</strong>等优点，有很强的连接能力<br>
+<strong>PCMCIA</strong> ：广泛 <strong>应用于笔记本电脑</strong> 中的一种接口标准，是一个小型的 <strong>用于扩展功能的插槽，可即插即用</strong><br>
+<strong>IDE总线 <strong>：ATA，是一种IDE接口磁盘驱动器接口类型，</strong> 硬盘和光驱通过 <strong><strong>IDE</strong></strong> 接口与主板连接</strong><br>
+<strong>SCSI</strong> ：用于 <strong>计算机和智能设备之间（硬盘、软驱、光驱、打印机等）系统级接口</strong> 的独立处理器标准<br>
+<strong>SATA</strong> ：基于行业标准的 <strong>串行硬件驱动器接口</strong> ， <strong>硬盘接口规范</strong></p>
+<h2 id="第7章-输入-输出系统">第7章 输入/输出系统</h2>
+<p><strong>7.1 I/O系统基本概念</strong></p>
+<p>I/O控制方式主要有一下4种：<br>
+1） <strong>程序查询方式</strong> ：由CPU通过程序不断查询I/O设备是否已做好准备，从而控制I/O设备与主机交换信息<br>
+2） <strong>程序中断方式</strong> ：只在I/O设备准备就绪并向CPU发出中断请求时才予以响应<br>
+3） <strong>DMA方式</strong> ：主存和I/O设备之间有一条直接数据通路，当主存和I/O设备交换信息时，无需调用中断服务程序<br>
+4） <strong>通道方式</strong><br>
+：在系统中设有通道控制部件，每个通道都挂接若干外设，主机在执行I/O命令时，只需启动有关通道，通道将执行通道程序，从而完成I/O操作。</p>
+<p><strong>7.2</strong> <strong>外部设备</strong></p>
+<p>显示存储器VRAM：<br>
+VRAM容量 = 分辨率 * 灰度级位数<br>
+VRAM带宽 = 分辨率 * 灰度级位数 * 帧频</p>
+<p>一块磁盘含有若干个记录面，每个记录面划分为若干条磁道，而每条磁道又划分为若干个扇区，扇区（也称为块）是磁盘读写的最小单位，也就是说磁盘按块读取。<br>
+<strong>磁头数</strong> ：即记录面数，磁头用于读取/写入盘片上记录面的信息，一个记录面对应一个磁头<br>
+<strong>柱面数</strong> ：表示硬盘每一面盘片上有多少条磁道<br>
+<strong>扇区数</strong> ：表示每一条磁道上有多少个扇区</p>
+<p><strong>平均存取时间由寻道时间（磁头移动到目的磁道）、旋转延迟时间（磁头定位到所在扇区）和传输时间（传输数据所花费的时间）三部分构成</strong></p>
+<p>硬盘属于机械式部件，其读写操作是串行的，不可能在同一时刻既读又写，也不可能在同一时刻读两组数据或写两组数据。</p>
+<p>RAID0没有容错能力，RAID1-RAID5的几种方案中，无论何时有磁盘损坏，都可以随时拔出受损的磁盘再插入好的磁盘，而数据不会损坏。<br>
+RAID0：无冗余和无校验的磁盘阵列<br>
+RAID1：镜像磁盘阵列<br>
+RAID2：采用纠错的海明码的磁盘阵列<br>
+RAID3：位交叉奇偶校验的磁盘阵列<br>
+RAID4：块交叉奇偶校验的磁盘阵列<br>
+RAID5：无独立校验的奇偶校验磁盘阵列<br>
+RAID通过同时使用多个磁盘，提高了传输率；通过在多个磁盘上并行存取来大幅提高存储系统的数据吞吐量；通过镜像功能，可以提高安全可靠性；通过数据校验，可以提供容错能力。</p>
+<p><strong>7.3 I/O接口</strong></p>
+<p><strong>I/O接口的功能</strong> ：<br>
+1）实现主机和外设的通信联络控制<br>
+2）进行地址译码和设备选择<br>
+3）实现数据缓冲<br>
+4）信号格式的转换<br>
+5）传送控制命令和状态信息</p>
+<p>I/O接口的基本结构</p>
+<p><strong>内部接口</strong> ：内部接口与系统总线相连，实质上是与内存、CPU相连，数据的传输方式只能是 <strong>并行传输</strong><br>
+外部接口：外部接口通过接口电缆与外设相连，外部接口的数据传输可能是串行方式，因此I/O接口需具有串/并转换功能。<br>
+<strong>注意</strong> ：端口是指接口电路中可以进行读/写的寄存器，若干个端口加上相应的控制逻辑才可以组成接口。</p>
+<p>I/O接口的类型</p>
+<p><strong>I/O端口 <strong>是指接口电路中可以被CPU直接访问的寄存器，主要有数据端口、状态端口和控制端口，若干个端口加上相应的控制逻辑电路组成接口。</strong><br>
+CPU能对数据端口执行读写操作，对状态端口只能执行读操作，对控制端口只能执行写操作。</strong></p>
+<p><strong>I/O端口的编址方式</strong> ：<br>
+1） <strong>统一编址</strong> ，又称存储器映射方式，是指把I/O端口当做存储器的单元进行地址分配，这种方式CPU不需要设置专门的I/O指令，用<br>
+<strong>统一的访存指令</strong> 就可以访问I/O端口<br>
+2） <strong>独立编址</strong> ，又称I/O映射方式，是指I/O端口地址与存储器地址无关，独立编址CPU <strong>需要设置专门的输入/ 输出指令访问端口</strong></p>
+<p><strong>7.4 I/O方式</strong></p>
+<p><strong>程序查询方式</strong> ：CPU一旦启动I/O，必须停止现行程序的运行，并在现行程序中插入一段程序，有&quot;踏步&quot;现象， <strong>CPU与I/O串行工作</strong><br>
+1）CPU执行初始化程序，并预置传送参数<br>
+2）向I/O接口发出命令字，启动I/O设备<br>
+3）从外设接口读取其状态信息<br>
+4）CPU不断查询I/O设备状态，直到外设准备就绪<br>
+5）传送一次数据<br>
+6）修改地址和计数器参数<br>
+7）判断传送是否结束，若没结束转第3步，直到计数器为0</p>
+<p><strong>程序中断方式：CPU与I/O并行工作</strong><br>
+<strong>程序中断</strong><br>
+是指在计算机执行现行程序的过程中，出现某些急需处理的异常情况或特殊请求，CPU暂时中止现行程序，而转去对这些异常情况或特殊请求进行处理，在处理完毕后CPU又自动返回到现行程序的断点处，继续执行原程序。</p>
+<p><strong>程序中断方式工作流程</strong> ：<br>
+1）中断请求：中断源向CPU发出中断信号<br>
+<strong>外中断</strong> ：来自处理器和内存以外的部件引起的中断<br>
+<strong>内中断</strong> ：在处理器和内存内部产生的中断<br>
+<strong>硬件中断属于外中断；软件中断属于内中断。</strong><br>
+<strong>非屏蔽中断是一种硬件中断，属于外中断；可屏蔽中断也是一种硬件中断，属于外中断。</strong></p>
+<p>2）中断判优：判断多个中断源的优先级，可由硬件实现或软件实现<br>
+硬件中断属于最高级，其次是软件中断，非屏蔽中断优于可屏蔽中断，DMA请求优于I/O设备传送的中断请求，高速设备优于低速设备，输入设备优于输出设备，实时设备优于普通设备。</p>
+<p>3）CPU响应中断的条件<br>
+有中断源提出中断请求<br>
+CPU允许中断及开中断<br>
+一条指令执行完毕且没有更紧迫的任务</p>
+<p>4）中断隐指令：完成关中断、保存断点、引出中断服务程序，由硬件直接实现，不允许、也不可能为用户使用的特殊指令。</p>
+<p>5）中断向量：查询中断服务程序的入口地址<br>
+<strong>注意：中断向量是中断服务程序的入口地址，中断向量地址地址是指中断服务程序的入口地址的地址。</strong></p>
+<p>6）中断处理：执行中断服务程序最后恢复现场，中断返回<br>
+中断服务程序的最后一条指令通常是一条 <strong>中断返回指令</strong> ，使其返回到原程序的断点处，以便继续执行原程序。</p>
+<p><strong>多重中断</strong> ：当CPU处理中断时，又有更高优先级的中断请求<br>
+条件：<br>
+1）在中断服务程序中提前设置开中断指令<br>
+2）优先级高的中断源有权中断优先级低的中断源</p>
+<p><strong>DMA方式 <strong>：完全由</strong> 硬件 <strong>进行成组信息传送的控制方式，主存和DMA接口之间有一条直接数据通路，</strong> I/O<br>
+与主机并行工作，程序和传送并行工作</strong></p>
+<p><strong>组成</strong> ：<br>
+主存地址计数器：存放要交换数据的主存地址<br>
+传送长度计数器：用来记录传送数据的长度<br>
+数据缓冲寄存器：用于暂存每次传送的数据<br>
+DMA请求触发器：I/O设备准备好数据后使DMA请求触发器置位<br>
+控制/状态逻辑：由控制和时序电路及状态标志组成<br>
+中断机构：数据块传送完毕后触发中断机构，提出中断请求</p>
+<p><strong>传送方式</strong> ：<br>
+<strong>停止CPU访存</strong> ：当需要传送数据时，停止CPU对主存的访问<br>
+<strong>交替访存</strong> ：将CPU周期分为DMA访存和CPU访存两个部分<br>
+<strong>周期挪用（周期窃取）</strong> ：I/O设备需要访存时，挪用一个或几个存取周期</p>
+<p><strong>传送过程</strong> ：<br>
+<strong>预处理</strong> ：完成寄存器置初始值之类的准备工作，I/O设备向DMA控制器发送DMA请求，再由DMA控制器向CPU发送总线请求<br>
+<strong>数据传送</strong> ：占用总线传输数据，数据传送 <strong>完全由DMA（硬件）控制</strong><br>
+<strong>后处理</strong> ：CPU执行中断服务程序做结束DMA处理</p>
+<p><strong>DMA方式和中断方式的区别</strong> ：<br>
+1）中断方式是程序的切换，需要保护和恢复现场；而DMA方式除了预处理和后处理，其他时候不占用CPU的任何资源<br>
+2）对中断请求的响应只能发生在每条指令执行完毕时（即指令的执行周期之后）；而对DMA请求的响应可以发生在每个机器周期结束时（在取指、间址、执行周期之后均可），只要CPU不占用总线就可以被响应<br>
+3）中断传送过程需要CPU的干预；而DMA传送过程不需要CPU的干预，故数据传输速率非常高，适合于高速外设的成组数据传送<br>
+4）DMA请求的优先级高于中断请求<br>
+5）中断方式具有对异常事件的处理能力，而DMA方式仅限于传送数据块的I/O操作<br>
+6）从数据传送来看，中断方式靠程序传送，DMA方式靠硬件传送</p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>王道机组知识点汇总</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="https://bigbearhyl.github.io/posts/36ff35da.html">https://bigbearhyl.github.io/posts/36ff35da.html</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>L</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2023-09-24</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2023-09-24</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%8E%8B%E9%81%93/"><div class="tags-punctuation"><svg class="faa-tada icon" style="height:1.1em;width:1.1em;fill:currentColor;position:relative;top:2px;margin-right:3px" aria-hidden="true"><use xlink:href="#icon-sekuaibiaoqian"></use></svg></div>王道</a><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"><div class="tags-punctuation"><svg class="faa-tada icon" style="height:1.1em;width:1.1em;fill:currentColor;position:relative;top:2px;margin-right:3px" aria-hidden="true"><use xlink:href="#icon-sekuaibiaoqian"></use></svg></div>计算机组成原理</a></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/11976d48.html"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://source.fomal.cc/img/default_cover_14.webp" onerror="onerror=null;src='/assets/r2.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">王道计网</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/11976d48.html" title="王道计网"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://source.fomal.cc/img/default_cover_14.webp" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2023-09-24</div><div class="title">王道计网</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><svg class="meta_icon" style="width:22px;height:22px;position:relative;top:5px"><use xlink:href="#icon-mulu1"></use></svg><span style="font-weight:bold">目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="toc-text">目录</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC1%E7%AB%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="toc-text">第1章 计算机系统概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC2%E7%AB%A0-%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97"><span class="toc-text">第2章 数据的表示和运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC3%E7%AB%A0-%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F"><span class="toc-text">第3章 存储系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC4%E7%AB%A0-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F"><span class="toc-text">第4章 指令系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC5%E7%AB%A0-%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-text">第5章 中央处理器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC6%E7%AB%A0-%E6%80%BB%E7%BA%BF"><span class="toc-text">第6章 总线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC7%E7%AB%A0-%E8%BE%93%E5%85%A5-%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F"><span class="toc-text">第7章 输入&#x2F;输出系统</span></a></div></div></div></div></main><footer style="background-color: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By L</div><div id="workboard"></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog right_side"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button class="share" type="button" title="分享链接" onclick="share()"><i class="fas fa-share-nodes"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i><span id="percent">0<span>%</span></span></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.umd.min.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/instant.page/5.1.0/instantpage.min.js" type="module"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><script async="async">var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())
+setTimeout(function(){preloader.endLoading();}, 5000);
+document.getElementById('loading-box').addEventListener('click',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.0/katex.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.0/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: '',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: '',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.staticfile.org/twikoo/1.6.8/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script><script async src="https://cdn1.tianli0.top/npm/vue@2.6.14/dist/vue.min.js"></script><script async src="https://cdn1.tianli0.top/npm/element-ui@2.15.6/lib/index.js"></script><script async src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script><script defer type="text/javascript" src="https://cdn1.tianli0.top/npm/sweetalert2@8.19.0/dist/sweetalert2.all.js"></script><script async src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><script defer src="https://cdn1.tianli0.top/gh/nextapps-de/winbox/dist/winbox.bundle.min.js"></script><script async src="//at.alicdn.com/t/c/font_3586335_hsivh70x0fm.js"></script><script async src="//at.alicdn.com/t/c/font_3636804_gr02jmjr3y9.js"></script><script async src="//at.alicdn.com/t/c/font_3612150_kfv55xn3u2g.js"></script><script async src="https://cdn.wpon.cn/2022-sucai/Gold-ingot.js"></script><canvas id="universe"></canvas><canvas id="snow"></canvas><script defer src="/js/fomal.js"></script><script src="/js/card_weibo.js"></script><script data-pjax type="text/javascript" src="/js/languages.js"></script><script data-pjax type="text/javascript" src="/js/calendar.js" ></script><link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdn1.tianli0.top/npm/js-heo@1.0.12/metingjs/Meting.min.js"></script><script src="https://lib.baomitu.com/pjax/0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show","#web_bg",".js-pjax","#bibi","body > title","#app","#tag-echarts","#posts-echart","#categories-echarts"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="https://bigbearhyl.github.io/categories/数据结构/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🍡 数据结构学习笔记 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://bigbearhyl.github.io/categories/计算机组成原理/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🎄 组成原理学习笔记 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://bigbearhyl.github.io/categories/计算机网络/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💦 计算机网络学习笔记 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="https://bigbearhyl.github.io/categories/演示/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">🍥 案例演示笔记 (1)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item" style="visibility: hidden"></div><div class="magnet_item" style="visibility: hidden"></div><a class="magnet_link_more"  href="https://bigbearhyl.github.io/categories/" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(33.333333333333336% - 5px);background: #e9e9e9;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: var(--text-bg-hover)}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/6c1d7907.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://source.fomal.cc/img/default_cover_14.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-08-25</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/6c1d7907.html&quot;);" href="javascript:void(0);" alt="">C语言排序算法</a><div class="blog-slider__text">🥧本文汇总C语言各种排序算法</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/6c1d7907.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;posts/2013454d.html&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://source.fomal.cc/img/default_cover_14.webp" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-08-09</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;posts/2013454d.html&quot;);" href="javascript:void(0);" alt="">Markdown语法与外挂标签写法汇总</a><div class="blog-slider__text">🥧本文汇总Markdown格式以及外挂标签在网页端的渲染效果，可作为文档进行查询</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;posts/2013454d.html&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper.min.js"></script><script defer data-pjax src="https://npm.elemecdn.com/hexo-butterfly-swiper/lib/swiper_init.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script data-pjax src="https://npm.elemecdn.com/hexo-filter-gitcalendar/lib/gitcalendar.js"></script><script data-pjax>
+  function gitcalendar_injector_config(){
+      var parent_div_git = document.getElementById('gitZone');
+      var item_html = '<div class="recent-post-item" id="gitcalendarBar" style="width:100%;height:auto;padding:10px;"><style>#git_container{min-height: 320px}@media screen and (max-width:650px) {#git_container{min-height: 0px}}</style><div id="git_loading" style="width:10%;height:100%;margin:0 auto;display: block;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50" xml:space="preserve"><path fill="#d0d0d0" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" transform="rotate(275.098 25 25)"><animatetransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"></animatetransform></path></svg><style>#git_container{display: none;}</style></div><div id="git_container"></div></div>';
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      console.log('已挂载gitcalendar')
+      }
+
+    if( document.getElementById('gitZone') && (location.pathname ==='/site/census/'|| '/site/census/' ==='all')){
+        gitcalendar_injector_config()
+        GitCalendarInit("/api?null",['#d9e0df', '#c6e0dc', '#a8dcd4', '#9adcd2', '#89ded1', '#77e0d0', '#5fdecb', '#47dcc6', '#39dcc3', '#1fdabe', '#00dab9'],'null')
+    }
+  </script><!-- hexo injector body_end end --></body></html>
